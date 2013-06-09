@@ -1,5 +1,10 @@
 ﻿@media (min-width: 1200px) {
-  .chapter-content {
-    width: 250px;
+  .twitter-follow-name {
+    visibility: visible;
+  }
+}
+@media (max-width: 1199px) {
+  .twitter-follow-name {
+    visibility: hidden;
   }
 }

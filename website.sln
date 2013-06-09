@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{FE3A0A
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSite.Test.Unit", "WebSite.Test.Unit\WebSite.Test.Unit.csproj", "{A04266CA-F484-436C-9008-031C5DC6BF7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,11 +31,16 @@ Global
 		{1E8E1777-7EFC-470E-88B3-F2B8669EC289}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E8E1777-7EFC-470E-88B3-F2B8669EC289}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E8E1777-7EFC-470E-88B3-F2B8669EC289}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A04266CA-F484-436C-9008-031C5DC6BF7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A04266CA-F484-436C-9008-031C5DC6BF7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A04266CA-F484-436C-9008-031C5DC6BF7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A04266CA-F484-436C-9008-031C5DC6BF7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1E8E1777-7EFC-470E-88B3-F2B8669EC289} = {16656328-2B4F-4E78-AD6D-FEC95994C7F8}
+		{A04266CA-F484-436C-9008-031C5DC6BF7D} = {6D6B32F9-FAF4-4A50-A12C-CF7D1D881B74}
 	EndGlobalSection
 EndGlobal

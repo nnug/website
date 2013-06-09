@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using NNUG.WebSite.Models;
 
 namespace NNUG.WebSite.Controllers
 {
@@ -6,7 +7,7 @@ namespace NNUG.WebSite.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View(Organization.Create());
         }
 
         public ActionResult About()
@@ -27,6 +28,13 @@ namespace NNUG.WebSite.Controllers
         public ActionResult Chapter()
         {
             return View();
+        }
+
+        [ChildActionOnly]
+        [OutputCache(VaryByParam = "chapter", Duration = 60)]
+        public PartialViewResult ChapterTile(Chapter chapter)
+        {
+            return PartialView(chapter);
         }
     }
 }

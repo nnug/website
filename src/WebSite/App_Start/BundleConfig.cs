@@ -20,7 +20,8 @@ namespace NNUG.WebSite.App_Start
                 "~/Content/style/theme.css",
                 "~/Content/less/responsive.css",
                 "~/Content/style/theme-responsive.css",
-                "~/Content/style/site.css"));
+                "~/Content/style/site.css",
+                "~/Content/style/site-responsive.css"));
         }
     }
 }

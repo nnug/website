@@ -1,0 +1,13 @@
+﻿@model NNUG.WebSite.Models.Chapter
+
+<div class="span3 content-block">
+    <a name="@Model.Name"></a>
+    <div class="text-center">
+        <a alt="Meetup group for @Model.Name" href="http://www.meetup.com/@Model.MeetupGroupName/"><img alt="NNUG @Model.Name logo" src="~/Content/images/@Model.LogoFileName"/></a>
+    </div>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+    <div class="text-center">
+        @Twitter.FollowerButton(@Model.TwitterName, false)
+
+    </div>
+</div>
