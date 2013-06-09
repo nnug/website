@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
-namespace WebSite
+namespace NNUG.WebSite.App_Start
 {
     public class FilterConfig
     {
