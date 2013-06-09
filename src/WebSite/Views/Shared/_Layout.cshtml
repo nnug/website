@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿
+
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -31,7 +33,6 @@
                         <div class="nav-collapse collapse">
                             <ul class="nav pull-right">
                                 <li>@Html.ActionLink("Forsiden", "index", "home")</li>
-                                @*<li><a href="https://twitter.com/nnug"><i class="icon-twitter"></i>&nbsp;Twitter</a></li>*@
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Om NNUG <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
@@ -42,10 +43,7 @@
                                         <li>@Html.ActionLink("Starte ny avdeling", "chapter", "home")</li>
                                     </ul>
                                 </li>
-                                <li>
-                                    <a href="https://twitter.com/nnug" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @@nnug</a>
-                                    <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>                                </li>
-
+                                <li>@Twitter.FollowerButton("nnug")</li>
                             </ul>
                         </div>
                     </div>

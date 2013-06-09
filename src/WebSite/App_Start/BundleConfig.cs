@@ -17,7 +17,6 @@ namespace NNUG.WebSite.App_Start
 
             bundles.Add(new StyleBundle("~/content/css").Include(
                 "~/Content/less/bootstrap.css",
-                "~/Content/font-awesome.css",
                 "~/Content/style/theme.css",
                 "~/Content/less/responsive.css",
                 "~/Content/style/theme-responsive.css",
