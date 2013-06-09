@@ -1,12 +1,32 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{16656328-2b4f-4e78-ad6d-fec95994c7f8}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{16656328-2B4F-4E78-AD6D-FEC95994C7F8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{6d6b32f9-faf4-4a50-a12c-cf7d1d881b74}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{6D6B32F9-FAF4-4A50-A12C-CF7D1D881B74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSite", "src\WebSite\WebSite.csproj", "{1E8E1777-7EFC-470E-88B3-F2B8669EC289}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{95DA6407-C624-4699-BAF3-0ADB499143DD}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E8E1777-7EFC-470E-88B3-F2B8669EC289}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E8E1777-7EFC-470E-88B3-F2B8669EC289}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E8E1777-7EFC-470E-88B3-F2B8669EC289}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E8E1777-7EFC-470E-88B3-F2B8669EC289}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1E8E1777-7EFC-470E-88B3-F2B8669EC289} = {16656328-2B4F-4E78-AD6D-FEC95994C7F8}
 	EndGlobalSection
 EndGlobal
