@@ -52,7 +52,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\WebSite\WebSite.csproj">
+    <ProjectReference Include="..\..\src\WebSite\WebSite.csproj">
       <Project>{1E8E1777-7EFC-470E-88B3-F2B8669EC289}</Project>
       <Name>WebSite</Name>
     </ProjectReference>
