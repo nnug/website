@@ -14,7 +14,7 @@
 
     </head>
     <body>
-        @*<header>*@
+        <header>
             <div class="navbar navbar-fixed-top navbar">
                 <div class="navbar-inner">
                     <div class="container">
@@ -24,34 +24,39 @@
                             <span class="icon-bar"></span>
                         </button>
                     
-                        <a class="brand" href="@Url.Action("Index", "Home")">
+                        <a class="brand" href="@Url.Action("index", "home")">
                             <img alt="NNUG logo" src="~/Content/images/NNUG-logo.png" />
                             <span class="brand-text">Norwegian .NET User Group</span>
                         </a>
                         <div class="nav-collapse collapse">
                             <ul class="nav pull-right">
-                                <li><a href="@Url.Action("Index", "Home")">Forsiden</a></li>
-                                <li><a href="https://twitter.com/nnug"><i class="icon-twitter"></i>&nbsp;Twitter</a></li>
+                                <li>@Html.ActionLink("Forsiden", "index", "home")</li>
+                                @*<li><a href="https://twitter.com/nnug"><i class="icon-twitter"></i>&nbsp;Twitter</a></li>*@
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Om NNUG <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Om NNUG</a></li>
+                                        <li>@Html.ActionLink("Om NNUG", "about", "home")</li>
                                         <li class="divider"></li>
-                                        <li><a href="#">Ofte stilte spørsmål</a></li>
-                                        <li><a href="#">Tips til foredragsholdere</a></li>
-                                        <li><a href="#">Starte ny avdeling</a></li>
+                                        <li>@Html.ActionLink("Ofte stilte spørsmål", "faq", "home")</a></li>
+                                        <li>@Html.ActionLink("Tips til foredragsholdere", "speaker", "home")</li>
+                                        <li>@Html.ActionLink("Starte ny avdeling", "chapter", "home")</li>
                                     </ul>
                                 </li>
+                                <li>
+                                    <a href="https://twitter.com/nnug" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @@nnug</a>
+                                    <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>                                </li>
 
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        @*</header>*@
-
-        @RenderBody()
+        </header>
         
+        <div class="container">
+            @RenderBody()
+        </div>
+
         <footer>
             <div class="container">
                 Copyright &copy; @DateTime.Now.Year Norwegian .NET User Group

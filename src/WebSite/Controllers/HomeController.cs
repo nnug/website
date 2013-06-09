@@ -4,13 +4,29 @@ namespace NNUG.WebSite.Controllers
 {
     public class HomeController : Controller
     {
-        //
-        // GET: /Home/
-
         public ActionResult Index()
         {
             return View();
         }
 
+        public ActionResult About()
+        {
+            return View();
+        }
+
+        public ActionResult Faq()
+        {
+            return View();
+        }
+
+        public ActionResult Speaker()
+        {
+            return View();
+        }
+
+        public ActionResult Chapter()
+        {
+            return View();
+        }
     }
 }
