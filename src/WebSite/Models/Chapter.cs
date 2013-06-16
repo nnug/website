@@ -9,7 +9,7 @@
             _meetupGroupName = meetupGroupName ?? string.Format("nnug-{0}", name.ToLowerInvariant());
 
             Name = name;
-            MeetupGroup = new MeetupGroup();
+            MeetupGroup = new MeetupGroup(_meetupGroupName);
         }
 
         public string Name { get; private set; }

@@ -1,11 +1,29 @@
-﻿@model NNUG.WebSite.Models.Chapter
+﻿@using System.Globalization
+@model Chapter
 
 <div class="span3 content-block">
     <a name="@Model.Name"></a>
     <div class="text-center">
         <a alt="Meetup group for @Model.Name" href="http://www.meetup.com/@Model.MeetupGroupName/"><img alt="NNUG @Model.Name logo" src="~/Content/images/@Model.LogoFileName"/></a>
     </div>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+     
+    <div class="events">
+        <strong>Kommende møter</strong>
+        <ul>
+            @foreach (var meetupEvent in Model.MeetupGroup.UpcomingEvents)
+            {
+                <li>
+                    <p class="calendar">@meetupEvent.StartTime.Day<em>@CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(meetupEvent.StartTime.Month)</em></p>
+                    <p class="eventName">@meetupEvent.Name</p>
+                    <p class="eventName">Klokken @meetupEvent.StartTime.ToShortTimeString()</p>
+                    <p class="eventVenue">@meetupEvent.Venue.Name</p>
+@*                    <p class="eventVenue">@meetupEvent.Venue.Address</p>*@
+                    <div class="pull-right"><a href="@meetupEvent.EventUrl"><img src="http://img.meetup.com/img/logo_45.png"/></a></div>
+                </li>
+            }
+        </ul>
+    </div>
+
     <div class="text-center">
         @Twitter.FollowerButton(@Model.TwitterName, false)
 
