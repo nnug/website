@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{FE3A0A
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSite.Test.Unit", "WebSite.Test.Unit\WebSite.Test.Unit.csproj", "{A04266CA-F484-436C-9008-031C5DC6BF7D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSite.Test.Unit", "test\WebSite.Test.Unit\WebSite.Test.Unit.csproj", "{A04266CA-F484-436C-9008-031C5DC6BF7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
