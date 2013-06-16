@@ -14,3 +14,9 @@
   white-space: nowrap;
   vertical-align: text-bottom;
 }
+figure {
+  margin: 0px;
+}
+figcaption {
+  font-size: smaller;
+}
