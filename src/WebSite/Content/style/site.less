@@ -1,4 +1,7 @@
-﻿.content-block {
+﻿@nnugColor: #002d62;
+@color: #333333;
+
+.content-block {
     background: white;
     padding: 10px;
     margin-bottom: 30px;
@@ -8,7 +11,7 @@
 }
 
 .brand-text {
-    color: #002d62;
+    color: @nnugColor;
     font-size: 30px;
     font-weight: 800;
     margin-left: 10px;
@@ -29,29 +32,54 @@ div.events {
     margin-top: 5px;
 }
 
+.events .span4 {
+    text-align: center;
+}
+
 .events ul {
+    list-style-type: none;  
     margin: 0px;
 }
 
-.events li {
-    height: 120px;
+.events p {
+    margin: 5px 0px;
 }
 
-.events p {
-    margin: 0px 5px;
+.events a {
+    color: @color;
+}
+
+.events hr {
+    margin: 5px 0px;
+}
+
+.events .row-fluid:hover {
+    background-color: #f7f7f7;  
+}
+
+.eventTime {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.eventName {
+    color: @nnugColor;
+    font-weight: bold;
 }
 
 .calendar {
-    margin: .25em 10px 10px 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
     padding-top: 5px;
-    float: left;
     width: 80px;
     background: #ededef;
     background: -webkit-gradient(linear, left top, left bottom, from(#ededef), to(#ccc));
     background: -moz-linear-gradient(top, #ededef, #ccc);
     font: bold 30px/60px Arial Black, Arial, Helvetica, sans-serif;
     text-align: center;
-    color: #000;
+    color: @color;
     -webkit-text-shadow: #fff 0 1px 0;
     text-shadow: #fff 0 1px 0;
     -moz-border-radius: 3px;
@@ -65,7 +93,7 @@ div.events {
 
 .calendar em {
     display: block;
-    font: normal bold 11px/30px Arial, Helvetica, sans-serif;
+    font: normal bold 13px/35px Arial, Helvetica, sans-serif;
     color: #fff;
     -webkit-text-shadow: #00365a 0 -1px 0;
     text-shadow: #00365a 0 -1px 0;
@@ -79,4 +107,81 @@ div.events {
     -webkit-border-bottom-left-radius: 3px;
     border-bottom-left-radius: 3px;
     border-top: 1px solid #00365a;
+}
+
+.btn-twitter {
+    -webkit-box-shadow: none;
+    -webkit-user-select: none;
+    background-color: rgb(248, 248, 248);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(248, 248, 248)), to(rgb(217, 217, 217)));
+    border-bottom-color: rgb(187, 187, 187);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-image-outset: 0px;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border-left-color: rgb(187, 187, 187);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: rgb(187, 187, 187);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: rgb(187, 187, 187);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    height: 28px;
+    line-height: 26px;
+    max-width: 100%;
+    outline-color: rgb(51, 51, 51);
+    outline-style: none;
+    outline-width: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    text-shadow: rgba(255, 255, 255, 0.498039) 0px 1px 0px;
+    vertical-align: top;
+    visibility: visible;
+    width: 90px;
+    white-space: nowrap;
+    zoom: 1;
+}
+
+.btn-twitter:hover {
+    border-color: #bbb;
+    background-color: #f8f8f8;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#f8f8f8),to(#d9d9d9));
+    background-image: -moz-linear-gradient(top,#f8f8f8,#d9d9d9);
+    background-image: -o-linear-gradient(top,#f8f8f8,#d9d9d9);
+    background-image: -ms-linear-gradient(top,#f8f8f8,#d9d9d9);
+    background-image: linear-gradient(top,#f8f8f8,#d9d9d9);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.btn-twitter img {
+    margin: 6px 5px 5px 5px;
+    vertical-align: top;
+}
+
+a:hover {
+    text-decoration: none !important;
 }

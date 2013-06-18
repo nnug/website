@@ -6,6 +6,6 @@ namespace NNUG.WebSite.ServiceAgent
 {
     public interface IMeetupApiClient
     {
-        Task<IEnumerable<Event>> GetEvents(string meetupGroupName);
+        Task<ICollection<Event>> GetEvents(string meetupGroupName);
     }
 }

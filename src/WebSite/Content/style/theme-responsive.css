@@ -7,6 +7,15 @@
   .brand-text {
     display: none;
   }
+  .events .span4 {
+    margin-right: 1px;
+    width: 100%;
+    text-align: center;
+  }
+  .events .span8 {
+    width: 100%;
+    text-align: center;
+  }
 }
 @media (max-width: 979px) {
   .span3.content-block {
@@ -28,5 +37,25 @@
   .navbar .container {
     width: auto;
     padding: 0 0 0 15px;
+  }
+  .events .eventTime {
+    margin-top: 0px;
+  }
+  .events .span4 {
+    width: 80px;
+    float: left;
+    /*text-align: left !important;*/
+  
+  }
+  .events .span8 {
+    width: 80%;
+    text-align: left;
+    margin-left: 90px;
+  }
+  .events p {
+    margin: 0px 5px;
+  }
+  .events a {
+    text-decoration: none !important;
   }
 }

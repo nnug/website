@@ -27,7 +27,7 @@ namespace WebSite.Test.Unit.ServiceAgent
 
             var meetupApiClient = new MeetupApiClient(_meetupSettings, _httpGetStringCommand);
             var events = await meetupApiClient.GetEvents("nnug-trondheim");
-            Assert.That(events, Has.Length.EqualTo(0));
+            Assert.That(events, Has.Count.EqualTo(2));
         }
     }
 }

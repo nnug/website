@@ -2,30 +2,47 @@
 @model Chapter
 
 <div class="span3 content-block">
-    <a name="@Model.Name"></a>
+    <a id="@Model.Name"></a>
     <div class="text-center">
-        <a alt="Meetup group for @Model.Name" href="http://www.meetup.com/@Model.MeetupGroupName/"><img alt="NNUG @Model.Name logo" src="~/Content/images/@Model.LogoFileName"/></a>
+        <a href="http://www.meetup.com/@Model.MeetupGroupName/"><img alt="Meetup group for @Model.Name" src="~/Content/images/@Model.LogoFileName"/></a>
     </div>
-     
     <div class="events">
+        <p>Antall medlemmer: @Model.MeetupGroup.NumberOfMembers</p>
+        <p>Vudering: @Model.MeetupGroup.Rating</p>
+        <br/>
         <strong>Kommende møter</strong>
         <ul>
             @foreach (var meetupEvent in Model.MeetupGroup.UpcomingEvents)
             {
                 <li>
-                    <p class="calendar">@meetupEvent.StartTime.Day<em>@CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(meetupEvent.StartTime.Month)</em></p>
-                    <p class="eventName">@meetupEvent.Name</p>
-                    <p class="eventName">Klokken @meetupEvent.StartTime.ToShortTimeString()</p>
-                    <p class="eventVenue">@meetupEvent.Venue.Name</p>
-@*                    <p class="eventVenue">@meetupEvent.Venue.Address</p>*@
-                    <div class="pull-right"><a href="@meetupEvent.EventUrl"><img src="http://img.meetup.com/img/logo_45.png"/></a></div>
+                    <a href="@meetupEvent.EventUrl">
+                        <div class="row-fluid">
+                            <div class="span4">
+                                <div>
+                                    <div class="calendar">@meetupEvent.StartTime.Day<em>@CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(meetupEvent.StartTime.Month)</em></div>
+                                </div>
+                                <div class="eventTime">@meetupEvent.StartTime.ToShortTimeString()</div>
+                            </div>
+                            <div class="span8">
+                                <p class="eventName">@meetupEvent.Name</p>
+                                <p class="eventVenue">@meetupEvent.Venue.Name</p>
+                            </div>
+                        </div>
+                    </a>
+                    <hr/>
                 </li>
             }
         </ul>
     </div>
-
+    <br/>
     <div class="text-center">
-        @Twitter.FollowerButton(@Model.TwitterName, false)
-
+        <div class="row-fluid">
+            <div class="span6">
+                <a class="btn-twitter" href="@Model.MeetupGroup.JoinUrl"><img src="http://img.meetup.com/img/logo_45.png" width="22px"/>Join us!</a>
+            </div>
+            <div class="span6">
+                @Twitter.FollowerButton(@Model.TwitterName, false)
+            </div>
+        </div>
     </div>
 </div>

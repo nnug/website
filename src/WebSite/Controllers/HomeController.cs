@@ -31,7 +31,7 @@ namespace NNUG.WebSite.Controllers
         }
 
         [ChildActionOnly]
-        [OutputCache(VaryByParam = "chapter", Duration = 60)]
+        //[OutputCache(VaryByParam = "chapter", Duration = 60)]
         public PartialViewResult ChapterTile(Chapter chapter)
         {
             return PartialView(chapter);
