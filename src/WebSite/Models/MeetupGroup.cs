@@ -27,7 +27,7 @@ namespace NNUG.WebSite.Models
                                                  new Venue
                                                      {
                                                          Name = "Clarion Hotel & Congress Trondheim",
-                                                         Address = "VenueAddress",
+                                                         Address1 = "VenueAddress",
                                                          City = "Venuecity",
                                                          Country = "VenueCountry"
                                                      }
@@ -47,7 +47,7 @@ namespace NNUG.WebSite.Models
                                                  new Venue
                                                      {
                                                          Name = "Clarion Hotel & Congress Trondheim",
-                                                         Address = "VenueAddress",
+                                                         Address1 = "VenueAddress",
                                                          City = "Venuecity",
                                                          Country = "VenueCountry"
                                                      }
