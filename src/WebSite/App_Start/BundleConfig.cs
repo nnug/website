@@ -7,7 +7,8 @@ namespace NNUG.WebSite.App_Start
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/scripts/jquery").Include(
-                "~/Scripts/jquery-{version}.js"));
+                "~/Scripts/jquery-{version}.js",
+                "~/Scripts/jquery.rateit.js"));
 
             bundles.Add(new ScriptBundle("~/scripts/modernizr").Include(
                 "~/Scripts/modernizr-*"));
@@ -21,7 +22,8 @@ namespace NNUG.WebSite.App_Start
                 "~/Content/less/responsive.css",
                 "~/Content/style/theme-responsive.css",
                 "~/Content/style/site.css",
-                "~/Content/style/site-responsive.css"));
+                "~/Content/style/site-responsive.css",
+                "~/Content/rateit.css"));
         }
     }
 }
