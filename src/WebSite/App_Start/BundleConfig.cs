@@ -23,6 +23,7 @@ namespace NNUG.WebSite.App_Start
                 "~/Content/style/theme-responsive.css",
                 "~/Content/style/site.css",
                 "~/Content/style/site-responsive.css",
+                "~/Content/less/fontawesome/font-awesome.css",
                 "~/Content/rateit.css"));
         }
     }

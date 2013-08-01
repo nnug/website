@@ -141,6 +141,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Content Include="Content\delete.gif" />
+    <Content Include="Content\font\fontawesome-webfont.svg" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Content\images\NNUG-logo.png" />
@@ -156,6 +157,24 @@
     <Content Include="Content\images\Roy-Osherove-at-NNUG-Oslo.jpeg" />
     <Content Include="Content\less\bootstrap.css" />
     <Content Include="Content\less\bootstrap.min.css" />
+    <Content Include="Content\less\fontawesome\bootstrap.css">
+      <DependentUpon>bootstrap.less</DependentUpon>
+    </Content>
+    <Content Include="Content\less\fontawesome\bootstrap.min.css">
+      <DependentUpon>bootstrap.less</DependentUpon>
+    </Content>
+    <Content Include="Content\less\fontawesome\font-awesome.css">
+      <DependentUpon>font-awesome.less</DependentUpon>
+    </Content>
+    <Content Include="Content\less\fontawesome\font-awesome.min.css">
+      <DependentUpon>font-awesome.less</DependentUpon>
+    </Content>
+    <Content Include="Content\less\fontawesome\variables.css">
+      <DependentUpon>variables.less</DependentUpon>
+    </Content>
+    <Content Include="Content\less\fontawesome\variables.min.css">
+      <DependentUpon>variables.less</DependentUpon>
+    </Content>
     <Content Include="Content\less\responsive.css" />
     <Content Include="Content\less\responsive.min.css" />
     <Content Include="Content\less\variables.css" />
@@ -229,6 +248,19 @@
     <Content Include="Content\style\theme.less" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\less\fontawesome\variables.less" />
+    <Content Include="Content\less\fontawesome\path.less" />
+    <Content Include="Content\less\fontawesome\mixins.less" />
+    <Content Include="Content\less\fontawesome\icons.less" />
+    <Content Include="Content\less\fontawesome\font-awesome-ie7.less" />
+    <Content Include="Content\less\fontawesome\font-awesome.less" />
+    <Content Include="Content\less\fontawesome\extras.less" />
+    <Content Include="Content\less\fontawesome\core.less" />
+    <Content Include="Content\less\fontawesome\bootstrap.less" />
+    <Content Include="Content\font\fontawesome-webfont.woff" />
+    <Content Include="Content\font\fontawesome-webfont.ttf" />
+    <Content Include="Content\font\fontawesome-webfont.eot" />
+    <Content Include="Content\font\FontAwesome.otf" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery-2.0.3.min.js" />
