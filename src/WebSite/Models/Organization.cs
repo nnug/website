@@ -16,7 +16,7 @@ namespace NNUG.WebSite.Models
                                new Chapter("Bergen"),
                                new Chapter("Trondheim"),
                                new Chapter("Stavanger"),
-                               new Chapter("Kristiansand"),
+                               new Chapter("Kristiansand", twitterName: ""),
                                new Chapter("Haugesund"),
                                new Chapter("Vestfold")
                            };

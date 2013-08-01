@@ -39,7 +39,10 @@
                 <a class="btn-twitter" href="@Model.MeetupGroup.JoinUrl"><img src="http://img.meetup.com/img/logo_45.png" width="22px"/>Join us!</a>
             </div>
             <div class="span6">
-                @Twitter.FollowerButton(@Model.TwitterName, false)
+                @if (!string.IsNullOrEmpty(Model.TwitterName))
+                {
+                    @(Twitter.FollowerButton(Model.TwitterName, false))
+                }
             </div>
         </div>
     </div>
