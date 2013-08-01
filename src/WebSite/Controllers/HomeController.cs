@@ -25,7 +25,7 @@ namespace NNUG.WebSite.Controllers
             return View();
         }
 
-        public ActionResult Chapter()
+        public ActionResult StartChapter()
         {
             return View();
         }

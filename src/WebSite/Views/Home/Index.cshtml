@@ -15,7 +15,8 @@
                     <a href="#@chapter.Name">@chapter.Name</a><text>,</text>
                 }
                 og <a href="#@Model.Chapters.Last().Name">@Model.Chapters.Last().Name</a>. 
-                Er det ingen lokalavdeling der du bor? Hvorfor ikke starte en ny avdeling? Les mer om hva som skal til, og hva som forventes.
+                Er det ingen lokalavdeling der du bor? Hvorfor ikke starte en ny avdeling?
+                @Html.ActionLink("Les mer om hva som skal til, og hva som forventes.", "StartChapter", "Home")
             </p>
         </div>
     </div>

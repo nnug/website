@@ -235,7 +235,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Scripts\jquery-2.0.2.min.map" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Chapter.cshtml" />
+    <Content Include="Views\Home\StartChapter.cshtml" />
     <Content Include="Views\Home\ChapterTile.cshtml" />
     <Content Include="Views\Home\Faq.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
