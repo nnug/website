@@ -18,8 +18,11 @@ namespace WebSite.Test.Unit.ServiceAgent
         public void SetUp()
         {
             _meetupSettings = Substitute.For<IMeetupSettings>();
+            _meetupSettings.GetSignedGroupUri(Arg.Any<string>()).Returns(new Uri("http://api.meetup.com/2/group?meetupgroupname1"));
+            _meetupSettings.GetSignedEventUri(Arg.Any<string>()).Returns(new Uri("http://api.meetup.com/2/events?meetupgroupname1"));
             _httpGetStringCommand = Substitute.For<IHttpGetStringCommand>();
-            _httpGetStringCommand.Invoke(Arg.Any<Uri>()).Returns(Task.FromResult(TestData.EventResponse.EventsNnugTrondheim));
+            _httpGetStringCommand.Invoke(Arg.Is<Uri>(u => u.PathAndQuery.Contains("/group"))).Returns(Task.FromResult(TestData.MeetupApiResponse.GroupNnugTrondheim));
+            _httpGetStringCommand.Invoke(Arg.Is<Uri>(u => u.PathAndQuery.Contains("/events"))).Returns(Task.FromResult(TestData.MeetupApiResponse.EventsNnugTrondheim));
         }
 
         [TestCase(Category = "Unit")]
@@ -35,6 +38,7 @@ namespace WebSite.Test.Unit.ServiceAgent
             var meetupApiClient = new MeetupApiClient(_meetupSettings, _httpGetStringCommand);
             var events = await meetupApiClient.GetEvents("nnug-trondheim");
             Assert.That(events, Has.Count.EqualTo(2));
+            Assert.That(events.First().Name, Is.EqualTo("Sommerfest"));
         }
 
         [TestCase(Category = "Unit")]
@@ -43,6 +47,15 @@ namespace WebSite.Test.Unit.ServiceAgent
             var meetupApiClient = new MeetupApiClient(_meetupSettings, _httpGetStringCommand);
             var events = await meetupApiClient.GetEvents("nnug-trondheim");
             Assert.That(events.First().StartTime, Is.EqualTo(new DateTime(2013, 6, 20, 18, 0, 0)));
+        }
+
+        [TestCase(Category = "Unit")]
+        public async void Group_information_can_be_retrieved_through_the_meetup_api_client()
+        {
+            var meetupApiClient = new MeetupApiClient(_meetupSettings, _httpGetStringCommand);
+            var groupInformation = await meetupApiClient.GetGroupInformation("nnug-trondheim");
+            Assert.That(groupInformation, Is.Not.Null);
+            Assert.That(groupInformation.Name, Is.EqualTo("NNUG Trondheim"));
         }
     }
 }

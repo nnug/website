@@ -1,9 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using NNUG.WebSite.Integration;
 using NNUG.WebSite.Models;
 using ServiceStack.Text;
+
+namespace NNUG.WebSite.Models
+{
+}
 
 namespace NNUG.WebSite.ServiceAgent
 {
@@ -31,6 +36,12 @@ namespace NNUG.WebSite.ServiceAgent
         public async Task<ICollection<Event>> GetEvents(string meetupGroupName)
         {
             return await GetMeetupResults<Event>(_meetupSettings.GetSignedEventUri(meetupGroupName));
+        }
+
+        public async Task<Group> GetGroupInformation(string meetupGroupName)
+        {
+            var results = await GetMeetupResults<Group>(_meetupSettings.GetSignedGroupUri(meetupGroupName));
+            return results.First();
         }
 
         private async Task<ICollection<T>> GetMeetupResults<T>(Uri requestUri)
