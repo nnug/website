@@ -60,7 +60,8 @@ div.events {
   background: #ededef;
   background: -webkit-gradient(linear, left top, left bottom, from(#ededef), to(#cccccc));
   background: -moz-linear-gradient(top, #ededef, #cccccc);
-  font: bold 30px/60px Arial Black, Arial, Helvetica, sans-serif;
+  font: bold 30px Arial Black, Arial, Helvetica, sans-serif;
+  line-height: 60px;
   text-align: center;
   color: #333333;
   -webkit-text-shadow: #fff 0 1px 0;
@@ -75,7 +76,8 @@ div.events {
 }
 .calendar em {
   display: block;
-  font: normal bold 13px/35px Arial, Helvetica, sans-serif;
+  font: normal bold 13px Arial, Helvetica, sans-serif;
+  line-height: 35px;
   color: #fff;
   -webkit-text-shadow: #00365a 0 -1px 0;
   text-shadow: #00365a 0 -1px 0;
@@ -162,4 +164,7 @@ div.events {
 }
 a:hover {
   text-decoration: none !important;
+}
+.dropdown-backdrop {
+  position: static;
 }
