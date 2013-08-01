@@ -11,7 +11,7 @@ namespace NNUG.WebSite.Models
             var organization = new Organization();
             organization.Chapters = new List<Chapter>
                            {
-                               new Chapter("Online"),
+                               //new Chapter("Online"),
                                new Chapter("Oslo", "nnugoslo"),
                                new Chapter("Bergen"),
                                new Chapter("Trondheim"),
