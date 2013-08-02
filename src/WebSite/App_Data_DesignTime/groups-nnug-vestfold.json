@@ -1,0 +1,24 @@
+﻿{
+"results": [
+{
+"name": "NNUG Vestfold",
+"rating": 4.55,
+"members": 59
+}
+],
+"meta": {
+"lon": "",
+"count": 1,
+"signed_url": "http://api.meetup.com/2/groups?radius=25.0&order=id&group_urlname=nnug-vestfold&desc=false&offset=0&format=json&only=name%2Crating%2Cmembers&page=20&fields=&sig_id=97103452&sig=4721ff3bbc591323eca26937734531cb69154dcc",
+"link": "http://www.meetup.com/2/groups",
+"next": "",
+"total_count": 1,
+"url": "http://www.meetup.com/2/groups?radius=25.0&order=id&group_urlname=nnug-vestfold&desc=false&offset=0&format=json&only=name%2Crating%2Cmembers&page=20&fields=&sign=true",
+"id": "",
+"title": "Meetup Groups v2",
+"updated": 1370782995000,
+"description": """",
+"method": "Groups",
+"lat": ""
+}
+}

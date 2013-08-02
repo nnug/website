@@ -4,10 +4,10 @@
 <div class="span3 content-block">
     <a id="@Model.Name"></a>
     <div class="text-center">
-        <a href="http://www.meetup.com/@Model.MeetupGroupName/"><img alt="Meetup group for @Model.Name" src="~/Content/images/@Model.LogoFileName"/></a>
+        <a href="http://www.meetup.com/@Model.MeetupGroupUrl/"><img alt="Meetup group for @Model.Name" src="~/Content/images/@Model.LogoFileName"/></a>
     </div>
     <div class="events">
-        <i class="icon-group">&nbsp;</i>@Model.MeetupGroup.NumberOfMembers&nbsp;&nbsp;
+        <i class="icon-group">&nbsp;</i>@Model.MeetupGroup.Members&nbsp;&nbsp;
         <div class="inline rateit" data-rateit-value="@Model.MeetupGroup.Rating.ToString(CultureInfo.InvariantCulture)" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
         <hr/>
         <ul>
@@ -24,7 +24,9 @@
                             </div>
                             <div class="span8">
                                 <p class="eventName">@meetupEvent.Name</p>
-                                <p class="eventVenue">@meetupEvent.Venue.Name</p>
+                                <p class="eventVenue">
+                                    @(meetupEvent.Venue != null ? meetupEvent.Venue.Name : "Sted ikke bestemt")
+                                </p>
                             </div>
                         </div>
                     </a>

@@ -6,10 +6,6 @@ using NNUG.WebSite.Integration;
 using NNUG.WebSite.Models;
 using ServiceStack.Text;
 
-namespace NNUG.WebSite.Models
-{
-}
-
 namespace NNUG.WebSite.ServiceAgent
 {
     public class MeetupApiClient : IMeetupApiClient
@@ -23,30 +19,26 @@ namespace NNUG.WebSite.ServiceAgent
             JsConfig.PropertyConvention = JsonPropertyConvention.Lenient;
         }
 
-        public MeetupApiClient() : this(new MeetupSettings(), new HttpGetStringCommand())
-        {
-        }
-
         public MeetupApiClient(IMeetupSettings meetupSettings, IHttpGetStringCommand httpGetStringCommand)
         {
             _meetupSettings = meetupSettings;
             _httpGetStringCommand = httpGetStringCommand;
         }
 
-        public async Task<ICollection<Event>> GetEvents(string meetupGroupName)
+        public async Task<ICollection<Event>> GetEvents(string meetupGroupUrl)
         {
-            return await GetMeetupResults<Event>(_meetupSettings.GetSignedEventUri(meetupGroupName));
+            return await GetMeetupResults<Event>(_meetupSettings.GetSignedEventUri(meetupGroupUrl));
         }
 
-        public async Task<Group> GetGroupInformation(string meetupGroupName)
+        public async Task<MeetupGroup> GetGroupInformation(string meetupGroupUrl)
         {
-            var results = await GetMeetupResults<Group>(_meetupSettings.GetSignedGroupUri(meetupGroupName));
+            var results = await GetMeetupResults<MeetupGroup>(_meetupSettings.GetSignedGroupUri(meetupGroupUrl));
             return results.First();
         }
 
         private async Task<ICollection<T>> GetMeetupResults<T>(Uri requestUri)
         {
-            var response = await _httpGetStringCommand.Invoke(requestUri);
+            var response = await _httpGetStringCommand.InvokeAsync(requestUri);
             var meetupResponse = response.FromJson<MeetupResponse<T>>();
             return meetupResponse.Results;
         }

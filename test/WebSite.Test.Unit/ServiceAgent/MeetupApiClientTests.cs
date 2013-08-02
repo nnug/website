@@ -18,17 +18,17 @@ namespace WebSite.Test.Unit.ServiceAgent
         public void SetUp()
         {
             _meetupSettings = Substitute.For<IMeetupSettings>();
-            _meetupSettings.GetSignedGroupUri(Arg.Any<string>()).Returns(new Uri("http://api.meetup.com/2/group?meetupgroupname1"));
+            _meetupSettings.GetSignedGroupUri(Arg.Any<string>()).Returns(new Uri("http://api.meetup.com/2/groups?meetupgroupname1"));
             _meetupSettings.GetSignedEventUri(Arg.Any<string>()).Returns(new Uri("http://api.meetup.com/2/events?meetupgroupname1"));
             _httpGetStringCommand = Substitute.For<IHttpGetStringCommand>();
-            _httpGetStringCommand.Invoke(Arg.Is<Uri>(u => u.PathAndQuery.Contains("/group"))).Returns(Task.FromResult(TestData.MeetupApiResponse.GroupNnugTrondheim));
-            _httpGetStringCommand.Invoke(Arg.Is<Uri>(u => u.PathAndQuery.Contains("/events"))).Returns(Task.FromResult(TestData.MeetupApiResponse.EventsNnugTrondheim));
+            _httpGetStringCommand.InvokeAsync(Arg.Is<Uri>(u => u.Segments.Last() == "groups")).Returns(Task.FromResult(TestData.MeetupApiResponse.GroupNnugTrondheim));
+            _httpGetStringCommand.InvokeAsync(Arg.Is<Uri>(u => u.Segments.Last() == "events")).Returns(Task.FromResult(TestData.MeetupApiResponse.EventsNnugTrondheim));
         }
 
         [TestCase(Category = "Unit")]
-        public void A_new_instance_can_be_created_with_default_dependencies()
+        public void A_new_instance_can_be_created_with_required_dependencies()
         {
-            var meetupApiClient = new MeetupApiClient();
+            var meetupApiClient = new MeetupApiClient(_meetupSettings, _httpGetStringCommand);
             Assert.That(meetupApiClient, Is.Not.Null);
         }
 

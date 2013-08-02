@@ -6,16 +6,16 @@ namespace NNUG.WebSite.ServiceAgent
 {
     public class MeetupSettings : IMeetupSettings
     {
-        public Uri GetSignedGroupUri(string meetupGroupName)
+        public Uri GetSignedGroupUri(string meetupGroupUrl)
         {
             var signedEventUrls = (NameValueCollection)ConfigurationManager.GetSection("meetup/signedGroupUrls");
-            return new Uri(signedEventUrls[meetupGroupName]);
+            return new Uri(signedEventUrls[meetupGroupUrl]);
         }
 
-        public Uri GetSignedEventUri(string meetupGroupName)
+        public Uri GetSignedEventUri(string meetupGroupUrl)
         {
             var signedEventUrls = (NameValueCollection)ConfigurationManager.GetSection("meetup/signedEventUrls");
-            return new Uri(signedEventUrls[meetupGroupName]);
+            return new Uri(signedEventUrls[meetupGroupUrl]);
         }
     }
 }

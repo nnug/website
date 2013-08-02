@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Integration\HttpGetStringCommandTests.cs" />
+    <Compile Include="Integration\HttpGetStringFromEmbeddedResourceCommandTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceAgent\MeetupSettingsTests.cs" />
   </ItemGroup>

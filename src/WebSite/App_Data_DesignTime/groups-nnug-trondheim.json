@@ -1,0 +1,24 @@
+﻿{
+"results": [
+{
+"name": "NNUG Trondheim",
+"rating": 4.58,
+"members": 192
+}
+],
+"meta": {
+"lon": "",
+"count": 1,
+"signed_url": "http://api.meetup.com/2/groups?radius=25.0&order=id&group_urlname=nnug-trondheim&desc=false&offset=0&format=json&only=name%2Crating%2Cmembers&page=20&fields=&sig_id=97103452&sig=53b633cb7d9c686414b2ae404e147d6df6a75cfe",
+"link": "http://www.meetup.com/2/groups",
+"next": "",
+"total_count": 1,
+"url": "http://www.meetup.com/2/groups?radius=25.0&order=id&group_urlname=nnug-trondheim&desc=false&offset=0&format=json&only=name%2Crating%2Cmembers&page=20&fields=&sign=true",
+"id": "",
+"title": "Meetup Groups v2",
+"updated": 1374842378000,
+"description": """",
+"method": "Groups",
+"lat": ""
+}
+}

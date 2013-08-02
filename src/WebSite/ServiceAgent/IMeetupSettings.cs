@@ -4,7 +4,7 @@ namespace NNUG.WebSite.ServiceAgent
 {
     public interface IMeetupSettings
     {
-        Uri GetSignedGroupUri(string meetupGroupName);
-        Uri GetSignedEventUri(string meetupGroupName);
+        Uri GetSignedGroupUri(string meetupGroupUrl);
+        Uri GetSignedEventUri(string meetupGroupUrl);
     }
 }

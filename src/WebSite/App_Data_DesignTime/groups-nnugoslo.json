@@ -1,0 +1,24 @@
+﻿{
+"results": [
+{
+"name": "NNUG Oslo",
+"rating": 4.37,
+"members": 469
+}
+],
+"meta": {
+"lon": "",
+"count": 1,
+"signed_url": "http://api.meetup.com/2/groups?radius=25.0&order=id&group_urlname=nnugoslo&desc=false&offset=0&format=json&only=name%2Crating%2Cmembers&page=20&fields=&sig_id=97103452&sig=ddc91e97c08892afc6ae3f2b0589c1abc3ede700",
+"link": "http://www.meetup.com/2/groups",
+"next": "",
+"total_count": 1,
+"url": "http://www.meetup.com/2/groups?radius=25.0&order=id&group_urlname=nnugoslo&desc=false&offset=0&format=json&only=name%2Crating%2Cmembers&page=20&fields=&sign=true",
+"id": "",
+"title": "Meetup Groups v2",
+"updated": 1375435478000,
+"description": """",
+"method": "Groups",
+"lat": ""
+}
+}

@@ -1,13 +1,17 @@
-﻿using System.Web.Mvc;
+﻿using System.Threading.Tasks;
+using System.Web.Mvc;
+using NNUG.WebSite.Integration;
 using NNUG.WebSite.Models;
+using NNUG.WebSite.ServiceAgent;
 
 namespace NNUG.WebSite.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        //[OutputCache(Duration = 60)]
+        public async Task<ActionResult> Index()
         {
-            return View(Organization.Create());
+            return View(await Organization.Create(new MeetupSettings(), new HttpGetStringFromEmbeddedResourceCommand()));
         }
 
         public ActionResult About()
@@ -28,13 +32,6 @@ namespace NNUG.WebSite.Controllers
         public ActionResult StartChapter()
         {
             return View();
-        }
-
-        [ChildActionOnly]
-        //[OutputCache(VaryByParam = "chapter", Duration = 60)]
-        public PartialViewResult ChapterTile(Chapter chapter)
-        {
-            return PartialView(chapter);
         }
     }
 }

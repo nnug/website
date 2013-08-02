@@ -1,30 +1,41 @@
-﻿namespace NNUG.WebSite.Models
+﻿using System.Threading.Tasks;
+using NNUG.WebSite.Integration;
+using NNUG.WebSite.ServiceAgent;
+
+namespace NNUG.WebSite.Models
 {
     public class Chapter
     {
-        private string _meetupGroupName;
-        private string _twitterName;
+        private readonly IMeetupSettings _meetupSettings;
+        private readonly IHttpGetStringCommand _httpGetStringCommand;
+        private string _meetupGroupUrl;
+        private readonly string _twitterName;
 
-        public Chapter(string name, string meetupGroupName = null, string twitterName = null)
+        public Chapter(IMeetupSettings meetupSettings, IHttpGetStringCommand httpGetStringCommand, string meetupGroupUrl, string twitterName)
         {
-            Name = name;
-
-            _meetupGroupName = meetupGroupName ?? string.Format("nnug-{0}", name.ToLowerInvariant());
-            _twitterName = twitterName ?? string.Format("NNUG{0}", name);
-            MeetupGroup = new MeetupGroup(_meetupGroupName);
+            _meetupSettings = meetupSettings;
+            _httpGetStringCommand = httpGetStringCommand;
+            _meetupGroupUrl = meetupGroupUrl;
+            _twitterName = twitterName;
         }
 
-        public string Name { get; private set; }
+        public async Task LoadFromMeetupAsync()
+        {
+            var meetupGroup = new MeetupGroup(_meetupSettings, _httpGetStringCommand, _meetupGroupUrl);
+
+            MeetupGroup = await meetupGroup.LoadFromMeetupAsync();
+        }
 
         public string LogoFileName
         {
-            get { return string.Format("NNUG{0}_200.png", Name); }
+            get { return string.Format("{0}_200.png", _meetupGroupUrl); }
         }
 
         public string TwitterName { get { return _twitterName; } }
 
-        public string MeetupGroupName { get { return _meetupGroupName; } }
+        public string MeetupGroupUrl { get { return _meetupGroupUrl; } }
 
         public MeetupGroup MeetupGroup { get; private set; }
+        public string Name { get { return MeetupGroup.Name; } }
     }
 }

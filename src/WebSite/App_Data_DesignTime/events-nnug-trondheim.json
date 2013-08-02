@@ -1,0 +1,37 @@
+﻿{
+"results": [
+{
+"utc_offset": 3600000,
+"time": 1382943600000,
+"waitlist_count": 0,
+"event_url": "http://www.meetup.com/nnug-trondheim/events/121046502/",
+"yes_rsvp_count": 1,
+"name": "Trondheim Developers Conference 2013",
+"venue": {
+"id": 13615012,
+"lon": 10.402286,
+"repinned": false,
+"name": "Clarion Hotel & Congress Trondheim",
+"address_1": "Brattørkaia 1, 7010 Trondheim",
+"lat": 63.439404,
+"country": "no",
+"city": "Trondheim"
+}
+}
+],
+"meta": {
+"lon": "",
+"count": 1,
+"signed_url": "http://api.meetup.com/2/events?status=upcoming&order=time&limited_events=False&group_urlname=nnug-trondheim&desc=false&offset=0&format=json&only=name%2Cevent_url%2Crsvp_limit%2Cvenue%2Cutc_offset%2Ctime%2Cwaitlist_count%2Cyes_rsvp_count%2C&page=3&fields=&sig_id=97103452&sig=1c5c7f6501cfec9d57ea563cf1dea3319e3aabf5",
+"link": "http://www.meetup.com/2/events",
+"next": "",
+"total_count": 1,
+"url": "http://www.meetup.com/2/events?status=upcoming&order=time&limited_events=False&group_urlname=nnug-trondheim&desc=false&offset=0&format=json&only=name%2Cevent_url%2Crsvp_limit%2Cvenue%2Cutc_offset%2Ctime%2Cwaitlist_count%2Cyes_rsvp_count%2C&page=3&fields=&sign=true",
+"id": "",
+"title": "Meetup Events v2",
+"updated": 1369414510000,
+"description": "Access Meetup events using a group, member, or event id. Events in private groups are available only to authenticated members of those groups. To search events by topic or location, see [Open Events](/meetup_api/docs/2/open_events).",
+"method": "Events",
+"lat": ""
+}
+}
