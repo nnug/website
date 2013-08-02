@@ -2,7 +2,7 @@
 @model Chapter
 
 <div class="span3 content-block">
-    <a id="@Model.Name"></a>
+    <a id="@Model.MeetupGroupUrl"></a>
     <div class="text-center">
         <a href="http://www.meetup.com/@Model.MeetupGroupUrl/"><img alt="Meetup group for @Model.Name" src="~/Content/images/@Model.LogoFileName"/></a>
     </div>
@@ -44,10 +44,8 @@
     <hr/>
     <div class="text-center">
         <div class="row-fluid">
-            <div class="span6">
+            <div class="span12">
                 <a class="btn-twitter" href="@Model.MeetupGroup.JoinUrl"><img src="http://img.meetup.com/img/logo_45.png" width="22px"/>Join</a>
-            </div>
-            <div class="span6">
                 @if (!string.IsNullOrEmpty(Model.TwitterName))
                 {
                     @(Twitter.FollowerButton(Model.TwitterName, false))

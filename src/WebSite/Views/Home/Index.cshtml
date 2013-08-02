@@ -10,11 +10,11 @@
         </div>
         <div class="span9">
             <p>Norwegian .NET User Group - NNUG - er en uavhengig brukergruppe for utviklere som jobber med Microsofts .NET teknologier. Formålet med NNUG er å utveksle erfaringer om .NET, gi råd og fokusere på best practises. Målgruppen for NNUG er utviklere og arkitekter.</p>
-            <p>NNUG er nå etablert på følgende steder:
+            <p>NNUG er nå etablert med følgende avdelinger:
                 @foreach (var chapter in Model.Chapters.TakeWhile(c => c != Model.Chapters.Last())) {
-                    <a href="#@chapter.Name">@chapter.Name</a><text>,</text>
+                    <a href="#@chapter.MeetupGroupUrl">@chapter.Name</a><text>,</text>
                 }
-                og <a href="#@Model.Chapters.Last().Name">@Model.Chapters.Last().Name</a>. 
+                og <a href="#@Model.Chapters.Last().MeetupGroupUrl">@Model.Chapters.Last().Name</a>. 
                 Er det ingen lokalavdeling der du bor? Hvorfor ikke starte en ny avdeling?
                 @Html.ActionLink("Les mer om hva som skal til, og hva som forventes.", "StartChapter", "Home")
             </p>
