@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace NNUG.WebSite.Integration
+namespace NNUG.WebSite.Core.Integration
 {
     public interface IHttpGetStringCommand
     {

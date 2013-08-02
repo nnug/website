@@ -118,24 +118,25 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Core\MvcHelper\WebSiteExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Integration\HttpGetStringFromEmbeddedResourceCommand.cs" />
+    <Compile Include="Core\Integration\HttpGetStringFromEmbeddedResourceCommand.cs" />
     <Compile Include="Models\Chapter.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\MeetupGroup.cs" />
     <Compile Include="Models\Organization.cs" />
     <Compile Include="Models\Venue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Integration\HttpGetStringCommand.cs" />
-    <Compile Include="Integration\IHttpGetStringCommand.cs" />
-    <Compile Include="ServiceAgent\IMeetupApiClient.cs" />
-    <Compile Include="ServiceAgent\IMeetupSettings.cs" />
-    <Compile Include="ServiceAgent\JsonExtensions.cs" />
-    <Compile Include="ServiceAgent\MeetupApiClient.cs" />
-    <Compile Include="ServiceAgent\MeetupResponse.cs" />
-    <Compile Include="ServiceAgent\MeetupSettings.cs" />
+    <Compile Include="Core\Integration\HttpGetStringCommand.cs" />
+    <Compile Include="Core\Integration\IHttpGetStringCommand.cs" />
+    <Compile Include="Core\ServiceAgent\IMeetupApiClient.cs" />
+    <Compile Include="Core\ServiceAgent\IMeetupSettings.cs" />
+    <Compile Include="Core\ServiceAgent\JsonExtensions.cs" />
+    <Compile Include="Core\ServiceAgent\MeetupApiClient.cs" />
+    <Compile Include="Core\ServiceAgent\MeetupResponse.cs" />
+    <Compile Include="Core\ServiceAgent\MeetupSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -149,7 +150,7 @@
     <Content Include="Content\images\nnug-haugesund_200.png" />
     <Content Include="Content\images\nnug-kristiansand_200.png" />
     <Content Include="Content\images\nnug-online_200.png" />
-    <Content Include="Content\images\nnug-oslo_200.png" />
+    <Content Include="Content\images\nnugoslo_200.png" />
     <Content Include="Content\images\nnug-stavanger_200.png" />
     <Content Include="Content\images\nnug-trondheim_200.png" />
     <Content Include="Content\images\nnug-vestfold_200.png" />

@@ -22,8 +22,5 @@
     </div>
 </div>
 
-<div class="row">
-    @foreach (var chapter in Model.Chapters) {
-        Html.RenderPartial("ChapterTile", chapter);
-    }
-</div>
+@{ Html.RenderBootstrapGridLayout(Model.Chapters, 4, "ChapterTile"); }
+

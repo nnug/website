@@ -2,7 +2,7 @@
 using System.Collections.Specialized;
 using System.Configuration;
 
-namespace NNUG.WebSite.ServiceAgent
+namespace NNUG.WebSite.Core.ServiceAgent
 {
     public class MeetupSettings : IMeetupSettings
     {

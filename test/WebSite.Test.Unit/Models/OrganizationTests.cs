@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using NNUG.WebSite.Integration;
+using NNUG.WebSite.Core.Integration;
+using NNUG.WebSite.Core.ServiceAgent;
 using NNUG.WebSite.Models;
-using NNUG.WebSite.ServiceAgent;
 using NSubstitute;
 using NUnit.Framework;
 

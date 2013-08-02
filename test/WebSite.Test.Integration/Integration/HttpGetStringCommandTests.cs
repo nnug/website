@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using NNUG.WebSite.Integration;
+using NNUG.WebSite.Core.Integration;
 using NUnit.Framework;
 
 namespace WebSite.Test.Integration.Integration

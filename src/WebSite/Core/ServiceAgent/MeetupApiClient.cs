@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using NNUG.WebSite.Integration;
+using NNUG.WebSite.Core.Integration;
 using NNUG.WebSite.Models;
 using ServiceStack.Text;
 
-namespace NNUG.WebSite.ServiceAgent
+namespace NNUG.WebSite.Core.ServiceAgent
 {
     public class MeetupApiClient : IMeetupApiClient
     {

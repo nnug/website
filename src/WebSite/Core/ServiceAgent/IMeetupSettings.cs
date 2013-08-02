@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NNUG.WebSite.ServiceAgent
+namespace NNUG.WebSite.Core.ServiceAgent
 {
     public interface IMeetupSettings
     {

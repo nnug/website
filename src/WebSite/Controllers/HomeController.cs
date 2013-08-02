@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 using System.Web.Mvc;
-using NNUG.WebSite.Integration;
+using NNUG.WebSite.Core.Integration;
+using NNUG.WebSite.Core.ServiceAgent;
 using NNUG.WebSite.Models;
-using NNUG.WebSite.ServiceAgent;
 
 namespace NNUG.WebSite.Controllers
 {

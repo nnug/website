@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using NNUG.WebSite.Integration;
-using NNUG.WebSite.ServiceAgent;
+using NNUG.WebSite.Core.Integration;
+using NNUG.WebSite.Core.ServiceAgent;
 
 namespace NNUG.WebSite.Models
 {

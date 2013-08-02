@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace NNUG.WebSite.Integration
+namespace NNUG.WebSite.Core.Integration
 {
     public class HttpGetStringFromEmbeddedResourceCommand : IHttpGetStringCommand
     {

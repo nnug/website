@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using NNUG.WebSite.Models;
 
-namespace NNUG.WebSite.ServiceAgent
+namespace NNUG.WebSite.Core.ServiceAgent
 {
     public interface IMeetupApiClient
     {

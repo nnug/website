@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NNUG.WebSite.ServiceAgent
+namespace NNUG.WebSite.Core.ServiceAgent
 {
     public class MeetupResponse<T>
     {

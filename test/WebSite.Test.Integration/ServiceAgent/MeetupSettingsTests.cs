@@ -1,4 +1,4 @@
-﻿using NNUG.WebSite.ServiceAgent;
+﻿using NNUG.WebSite.Core.ServiceAgent;
 using NUnit.Framework;
 
 namespace WebSite.Test.Integration.ServiceAgent

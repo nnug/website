@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace NNUG.WebSite.Integration
+namespace NNUG.WebSite.Core.Integration
 {
     public class HttpGetStringCommand : IHttpGetStringCommand
     {

@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
-using NNUG.WebSite.Integration;
-using NNUG.WebSite.ServiceAgent;
+using NNUG.WebSite.Core.Integration;
+using NNUG.WebSite.Core.ServiceAgent;
 
 namespace NNUG.WebSite.Models
 {
@@ -12,7 +14,7 @@ namespace NNUG.WebSite.Models
         public static async Task<Organization> Create(IMeetupSettings meetupSettings, IHttpGetStringCommand httpGetStringCommand)
         {
             var organization = new Organization();
-            organization.Chapters = new List<Chapter>
+            var chapters = new List<Chapter>
                            {
                                //new Chapter(meetupSettings, httpGetStringCommand, "nnug-online", "NNUGOnline"),
                                new Chapter(meetupSettings, httpGetStringCommand, "nnugoslo", "NNUGOslo"),
@@ -24,10 +26,12 @@ namespace NNUG.WebSite.Models
                                new Chapter(meetupSettings, httpGetStringCommand, "nnug-vestfold", "NNUGVestfold")
                            };
 
-            foreach (var chapter in organization.Chapters)
+            foreach (var chapter in chapters)
             {
                 await chapter.LoadFromMeetupAsync();
             }
+
+            organization.Chapters = chapters.OrderByDescending(c => c.MeetupGroup.Members).ToList();
 
             return organization;
         }
