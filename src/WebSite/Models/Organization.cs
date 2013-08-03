@@ -16,14 +16,14 @@ namespace NNUG.WebSite.Models
             var organization = new Organization();
             var chapters = new List<Chapter>
                            {
-                               //new Chapter(meetupSettings, httpGetStringCommand, "nnug-online", "NNUGOnline"),
-                               new Chapter(meetupSettings, httpGetStringCommand, "nnugoslo", "NNUGOslo"),
-                               new Chapter(meetupSettings, httpGetStringCommand, "nnug-bergen", "NNUGBergen"),
-                               new Chapter(meetupSettings, httpGetStringCommand, "nnug-trondheim", "NNUGTrondheim"),
-                               new Chapter(meetupSettings, httpGetStringCommand, "nnug-stavanger", "NNUGStavanger"),
-                               new Chapter(meetupSettings, httpGetStringCommand, "nnug-kristiansand", ""),
-                               new Chapter(meetupSettings, httpGetStringCommand, "nnug-haugesund", "NNUGHaugesund"),
-                               new Chapter(meetupSettings, httpGetStringCommand, "nnug-vestfold", "NNUGVestfold")
+                               //new Chapter(meetupSettings, httpGetStringCommand, "nnug-online", "NNUG Online", "NNUGOnline"),
+                               new Chapter(meetupSettings, httpGetStringCommand, "nnugoslo", "NNUG Oslo", "NNUGOslo"),
+                               new Chapter(meetupSettings, httpGetStringCommand, "nnug-bergen", "NNUG Bergen", "NNUGBergen"),
+                               new Chapter(meetupSettings, httpGetStringCommand, "nnug-trondheim", "NNUG Trondheim", "NNUGTrondheim"),
+                               new Chapter(meetupSettings, httpGetStringCommand, "nnug-stavanger", "NNUG Stavanger", "NNUGStavanger"),
+                               new Chapter(meetupSettings, httpGetStringCommand, "nnug-kristiansand", "NNUG Kristiansand", ""),
+                               new Chapter(meetupSettings, httpGetStringCommand, "nnug-haugesund", "NNUG Haugesund", "NNUGHaugesund"),
+                               new Chapter(meetupSettings, httpGetStringCommand, "nnug-vestfold", "NNUG Vestfold", "NNUGVestfold"),
                            };
 
             foreach (var chapter in chapters)
@@ -31,7 +31,7 @@ namespace NNUG.WebSite.Models
                 await chapter.LoadFromMeetupAsync();
             }
 
-            organization.Chapters = chapters.OrderByDescending(c => c.MeetupGroup.Members).ToList();
+            organization.Chapters = chapters.OrderByDescending(c => c.NumberOfMembers).ToList();
 
             return organization;
         }

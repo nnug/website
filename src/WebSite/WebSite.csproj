@@ -276,6 +276,7 @@
     <EmbeddedResource Include="App_Data_DesignTime\groups-nnug-stavanger.json" />
     <EmbeddedResource Include="App_Data_DesignTime\groups-nnug-vestfold.json" />
     <EmbeddedResource Include="App_Data_DesignTime\groups-nnugoslo.json" />
+    <None Include="Properties\PublishProfiles\Local IIS.pubxml" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery-2.0.3.min.js" />
@@ -288,6 +289,7 @@
     </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>

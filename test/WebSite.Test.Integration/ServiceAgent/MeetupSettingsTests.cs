@@ -19,15 +19,15 @@ namespace WebSite.Test.Integration.ServiceAgent
         {
             var signedEventUrl = _meetupSettings.GetSignedEventUri("nnug-trondheim");
 
-            Assert.That(signedEventUrl.Query, Is.StringContaining("nnug-trondheim"));
+            Assert.That(signedEventUrl.Query, Is.StringContaining("&group_urlname=nnug-trondheim&"));
         }
 
-        [TestCase(Category = "Unit")]
+        [TestCase(Category = "Integration")]
         public void Signed_group_information_url_can_be_read_from_configuration()
         {
             var signedGroupUrl = _meetupSettings.GetSignedGroupUri("nnug-trondheim");
 
-            Assert.That(signedGroupUrl.Query, Is.StringContaining("nnug-trondheim"));            
+            Assert.That(signedGroupUrl.Query, Is.StringContaining("&group_urlname=nnug-trondheim&"));            
         }
     }
 }

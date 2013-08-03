@@ -50,6 +50,10 @@ div.events {
   color: #002d62;
   font-weight: bold;
 }
+.numberOfMembers {
+  margin-left: 5px;
+  margin-right: 20px;
+}
 .calendar {
   margin-top: 5px;
   margin-bottom: 5px;

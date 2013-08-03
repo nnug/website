@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Threading.Tasks;
 using NNUG.WebSite.Core.Integration;
 using NNUG.WebSite.Core.ServiceAgent;
@@ -22,10 +23,17 @@ namespace NNUG.WebSite.Models
         public async Task<MeetupGroup> LoadFromMeetupAsync()
         {
             var meetupApiClient = new MeetupApiClient(_meetupSettings, _httpGetStringCommand);
-            var groupInformation = await meetupApiClient.GetGroupInformation(_meetupGroupUrl);
-            groupInformation.UpcomingEvents = await meetupApiClient.GetEvents(_meetupGroupUrl);
+            try
+            {
+                var groupInformation = await meetupApiClient.GetGroupInformation(_meetupGroupUrl);
+                groupInformation.UpcomingEvents = await meetupApiClient.GetEvents(_meetupGroupUrl);
 
-            return groupInformation;
+                return groupInformation;
+            }
+            catch (HttpRequestException e)
+            {
+                return null;
+            }
         }
 
         public string Name { get; private set; }
@@ -34,10 +42,6 @@ namespace NNUG.WebSite.Models
 
         public double Rating { get; set; }
 
-        public Uri JoinUrl
-        {
-            get { return new Uri(MeetupApiClient.BaseUri, string.Format("/{0}/join/", Name)); }
-        }
 
         public IEnumerable<Event> UpcomingEvents { get; private set; }
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using NNUG.WebSite.Core.Integration;
 using NNUG.WebSite.Core.ServiceAgent;
@@ -33,6 +34,15 @@ namespace WebSite.Test.Unit.Models
         {
             _organization = await Organization.Create(_meetupSettings, _httpGetStringCommand);
             Assert.That(_organization.Chapters.Count, Is.EqualTo(7));
+        }
+
+        [TestCase(Category = "Unit")]
+        public async Task Meetup_group_information_can_not_be_retrieved_when_communication_with_meetup_dot_com_fails()
+        {
+            _httpGetStringCommand = Substitute.For<IHttpGetStringCommand>();
+            _httpGetStringCommand.InvokeAsync(Arg.Any<Uri>()).Returns(u => { throw new HttpRequestException("Dummy"); });
+            _organization = await Organization.Create(_meetupSettings, _httpGetStringCommand);
+            Assert.That(_organization.Chapters.First().MeetupGroup, Is.Null);
         }
     }
 }
