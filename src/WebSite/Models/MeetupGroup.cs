@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using NNUG.WebSite.Core.Integration;
@@ -30,13 +29,13 @@ namespace NNUG.WebSite.Models
 
                 return groupInformation;
             }
-            catch (HttpRequestException e)
+            catch (HttpRequestException)
             {
                 return null;
             }
         }
 
-        public string Name { get; private set; }
+        public string Name { get; set; }
 
         public int Members { get; set; }
 

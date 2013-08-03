@@ -133,7 +133,6 @@
     <Compile Include="Core\Integration\IHttpGetStringCommand.cs" />
     <Compile Include="Core\ServiceAgent\IMeetupApiClient.cs" />
     <Compile Include="Core\ServiceAgent\IMeetupSettings.cs" />
-    <Compile Include="Core\ServiceAgent\JsonExtensions.cs" />
     <Compile Include="Core\ServiceAgent\MeetupApiClient.cs" />
     <Compile Include="Core\ServiceAgent\MeetupResponse.cs" />
     <Compile Include="Core\ServiceAgent\MeetupSettings.cs" />

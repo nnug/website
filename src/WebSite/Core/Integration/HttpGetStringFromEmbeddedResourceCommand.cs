@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ namespace NNUG.WebSite.Core.Integration
         {
             using (var stream = GetType().Assembly.GetManifestResourceStream(embeddedResourceName))
             {
+                Debug.Assert(stream != null, "stream != null");
                 using (var reader = new StreamReader(stream))
                 {
                     return reader.ReadToEnd();
