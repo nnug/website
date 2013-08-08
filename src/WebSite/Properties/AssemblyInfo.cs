@@ -4,9 +4,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("NNUG WebSite")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("NNUG")]
+[assembly: AssemblyCompany("Norwegian .NET User Group Sentralt")]
 [assembly: AssemblyProduct("NNUG WebSite")]
-[assembly: AssemblyCopyright("Copyright © 2013 NNUG")]
+[assembly: AssemblyCopyright("Copyright © 2013 Norwegian .NET User Group Sentralt")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
