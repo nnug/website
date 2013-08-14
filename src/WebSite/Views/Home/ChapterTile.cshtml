@@ -52,7 +52,7 @@
     <div class="text-center">
         <div class="row-fluid">
             <div class="span12">
-                <a class="btn-twitter" href="@Model.JoinUrl"><img src="http://img.meetup.com/img/logo_45.png" width="22px"/>Join</a>
+                <a class="btn-twitter" href="@Model.JoinUrl"><img src="http://img.meetup.com/img/logo_45.png"/>Join</a>
                 @if (!string.IsNullOrEmpty(Model.TwitterName))
                 {
                     @(Twitter.FollowerButton(Model.TwitterName, false))
