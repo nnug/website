@@ -1,14 +1,22 @@
 /*
     RateIt
-    version 1.0.9
-    10/31/2012
+    version 1.0.13
+    08/17/2013
     http://rateit.codeplex.com
     Twitter: @gjunge
 
 */
 (function ($) {
+    $.rateit = {
+        aria : {
+            resetLabel: 'reset rating',
+            ratingLabel: 'rating'
+        }
+    }
+
     $.fn.rateit = function (p1, p2) {
         //quick way out.
+        var index = 1;
         var options = {}; var mode = 'init';
         var capitaliseFirstLetter = function (string) {
             return string.charAt(0).toUpperCase() + string.substr(1);
@@ -33,6 +41,17 @@
 
             //shorten all the item.data('rateit-XXX'), will save space in closure compiler, will be like item.data('XXX') will become x('XXX')
             var itemdata = function (key, value) {
+
+                if (value != null) {
+                    //update aria values
+                    var ariakey = 'aria-value' + ((key == 'value') ? 'now' : key);
+                    var range = item.find('.rateit-range');
+                    if (range.attr(ariakey) != undefined) {
+                        range.attr(ariakey, value);
+                    }
+
+                }
+
                 arguments[0] = 'rateit' + capitaliseFirstLetter(key);
                 return item.data.apply(item, arguments); ////Fix for WI: 523
             };
@@ -48,12 +67,13 @@
 
 
                 //if readonly now and it wasn't readonly, remove the eventhandlers.
-                if (p1 == 'readonly' && !itemdata('readonly')) {
+                if (p1 == 'readonly' && p2 == true && !itemdata('readonly')) {
                     item.find('.rateit-range').unbind();
                     itemdata('wired', false);
                 }
-                if (p1 == 'value' && p2 == null) p2 = itemdata('min'); //when we receive a null value, reset the score to its min value.
-
+                //when we receive a null value, reset the score to its min value.
+                if (p1 == 'value')
+                    p2 = (p2 == null) ? itemdata('min') : Math.max(itemdata('min'), Math.min(itemdata('max'), p2));
                 if (itemdata('backingfld')) {
                     //if we have a backing field, check which fields we should update. 
                     //In case of input[type=range], although we did read its attributes even in browsers that don't support it (using fld.attr())
@@ -80,7 +100,8 @@
                 itemdata('backingfld', itemdata('backingfld') || options.backingfld);
                 itemdata('starwidth', itemdata('starwidth') || options.starwidth);
                 itemdata('starheight', itemdata('starheight') || options.starheight);
-                itemdata('value', itemdata('value') || options.value || options.min);
+                
+                itemdata('value', Math.max(itemdata('min'), Math.min(itemdata('max'), (itemdata('value') || options.value || options.min) )));
                 itemdata('ispreset', itemdata('ispreset') !== undefined ? itemdata('ispreset') : options.ispreset);
                 //are we LTR or RTL?
 
@@ -108,8 +129,11 @@
                     }
                 }
 
-                //Create the necessary tags.
-                item.append('<div class="rateit-reset"></div><div class="rateit-range"><div class="rateit-selected" style="height:' + itemdata('starheight') + 'px"></div><div class="rateit-hover" style="height:' + itemdata('starheight') + 'px"></div></div>');
+                //Create the necessary tags. For ARIA purposes we need to give the items an ID. So we use an internal index to create unique ids
+                var element = item[0].nodeName == 'DIV' ? 'div' : 'span';
+                index++;
+                var html = '<button id="rateit-reset-{{index}}" class="rateit-reset" aria-label="' + $.rateit.aria.resetLabel + '" aria-controls="rateit-range-{{index}}"></button><{{element}} id="rateit-range-{{index}}" class="rateit-range" tabindex="0" role="slider" aria-label="' + $.rateit.aria.ratingLabel + '" aria-owns="rateit-reset-{{index}}" aria-valuemin="' + itemdata('min') + '" aria-valuemax="' + itemdata('max') + '" aria-valuenow="' + itemdata('value') + '"><{{element}} class="rateit-selected" style="height:' + itemdata('starheight') + 'px"></{{element}}><{{element}} class="rateit-hover" style="height:' + itemdata('starheight') + 'px"></{{element}}></{{element}}>';
+                item.append(html.replace(/{{index}}/gi, index).replace(/{{element}}/gi, element));
 
                 //if we are in RTL mode, we have to change the float of the "reset button"
                 if (!ltr) {
@@ -139,9 +163,12 @@
                 item.find('.rateit-selected').width(score);
             }
 
+            //setup the reset button
             var resetbtn = item.find('.rateit-reset');
             if (resetbtn.data('wired') !== true) {
-                resetbtn.click(function () {
+                resetbtn.bind('click', function (e) {
+                    e.preventDefault();
+                    resetbtn.blur();
                     itemdata('value', itemdata('min'));
                     range.find('.rateit-hover').hide().width(0);
                     range.find('.rateit-selected').width(0).show();
@@ -151,7 +178,7 @@
                 
             }
             
-
+            //this function calculates the score based on the current position of the mouse.
             var calcRawScore = function (element, event) {
                 var pageX = (event.changedTouches) ? event.changedTouches[0].pageX : event.pageX;
 
@@ -163,8 +190,31 @@
                 return score = Math.ceil(offsetx / itemdata('starwidth') * (1 / itemdata('step')));
             };
 
+            //sets the hover element based on the score.
+            var setHover = function (score) {
+                var w = score * itemdata('starwidth') * itemdata('step');
+                var h = range.find('.rateit-hover');
+                if (h.data('width') != w) {
+                    range.find('.rateit-selected').hide();
+                    h.width(w).show().data('width', w);
+                    var data = [(score * itemdata('step')) + itemdata('min')];
+                    item.trigger('hover', data).trigger('over', data);
+                }
+            };
 
-            //
+            var setSelection = function (value) {
+                itemdata('value', value);
+                if (itemdata('backingfld')) {
+                    $(itemdata('backingfld')).val(value);
+                }
+                if (itemdata('ispreset')) { //if it was a preset value, unset that.
+                    range.find('.rateit-selected').removeClass(presetclass);
+                    itemdata('ispreset', false);
+                }
+                range.find('.rateit-hover').hide();
+                range.find('.rateit-selected').width(value * itemdata('starwidth') - (itemdata('min') * itemdata('starwidth'))).show();
+                item.trigger('hover', [null]).trigger('over', [null]).trigger('rated', [value]);
+            };
 
             if (!itemdata('readonly')) {
                 //if we are not read only, add all the events
@@ -173,19 +223,12 @@
                 if (!itemdata('resetable')) 
                     resetbtn.hide();
 
-                //when the mouse goes over the range div, we set the "hover" stars.
+                //when the mouse goes over the range element, we set the "hover" stars.
                 if (!itemdata('wired')) {
                     range.bind('touchmove touchend', touchHandler); //bind touch events
                     range.mousemove(function (e) {
                         var score = calcRawScore(this, e);
-                        var w = score * itemdata('starwidth') * itemdata('step');
-                        var h = range.find('.rateit-hover');
-                        if (h.data('width') != w) {
-                            range.find('.rateit-selected').hide();
-                            h.width(w).show().data('width', w);
-                            var data = [(score * itemdata('step')) + itemdata('min')];
-                            item.trigger('hover', data).trigger('over', data);
-                        }
+                        setHover(score);
                     });
                     //when the mouse leaves the range, we have to hide the hover stars, and show the current value.
                     range.mouseleave(function (e) {
@@ -196,21 +239,20 @@
                     //when we click on the range, we have to set the value, hide the hover.
                     range.mouseup(function (e) {
                         var score = calcRawScore(this, e);
-
-                        var newvalue = (score * itemdata('step')) + itemdata('min');
-                        itemdata('value', newvalue);
-                        if (itemdata('backingfld')) {
-                            $(itemdata('backingfld')).val(newvalue);
-                        }
-                        if (itemdata('ispreset')) { //if it was a preset value, unset that.
-                            range.find('.rateit-selected').removeClass(presetclass);
-                            itemdata('ispreset', false);
-                        }
-                        range.find('.rateit-hover').hide();
-                        range.find('.rateit-selected').width(score * itemdata('starwidth') * itemdata('step')).show();
-                        item.trigger('hover', [null]).trigger('over', [null]).trigger('rated', [newvalue]);
+                        var value = (score * itemdata('step')) + itemdata('min');
+                        setSelection(value);
                     });
 
+                    //support key nav
+                    range.keyup( function (e) {
+                        if (e.which == 38 || e.which == (ltr ? 39 : 37)) {
+                            setSelection(Math.min(itemdata('value') + itemdata('step'), itemdata('max')));
+                        }
+                        if (e.which == 40 || e.which == (ltr ? 37 : 39)) {
+                            setSelection(Math.max(itemdata('value') - itemdata('step'), itemdata('min')));
+                        }
+                    });
+                  
                     itemdata('wired', true);
                 }
                 if (itemdata('resetable')) {
@@ -220,6 +262,8 @@
             else {
                 resetbtn.hide();
             }
+
+            range.attr('aria-readonly', itemdata('readonly'));
         });
     };
 
@@ -246,9 +290,9 @@
     };
 
     //some default values.
-    $.fn.rateit.defaults = { min: 0, max: 5, step: 0.5, starwidth: 16, starheight: 16, readonly: false, resetable: true, ispreset: false };
+    $.fn.rateit.defaults = { min: 0, max: 5, step: 0.5, starwidth: 16, starheight: 16, readonly: false, resetable: true, ispreset: false};
 
-    //invoke it on all div.rateit elements. This could be removed if not wanted.
-    $(function () { $('div.rateit').rateit(); });
+    //invoke it on all .rateit elements. This could be removed if not wanted.
+    $(function () { $('div.rateit, span.rateit').rateit(); });
 
 })(jQuery);
