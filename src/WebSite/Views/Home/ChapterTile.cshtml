@@ -1,7 +1,7 @@
 ﻿@using System.Globalization
 @model Chapter
 
-<div class="span3 content-block">
+<div class="col-md-3 content-block">
     <a id="@Model.MeetupGroupUrl"></a>
     <div class="text-center">
         <a href="http://www.meetup.com/@Model.MeetupGroupUrl/"><img alt="Meetup group for @Model.Name" src="~/Content/images/@Model.LogoFileName"/></a>
@@ -23,14 +23,14 @@
                     {
                         <li>
                             <a href="@meetupEvent.EventUrl">
-                                <div class="row-fluid">
-                                    <div class="span4">
+                                <div class="row">
+                                    <div class="col-md-4">
                                         <div>
                                             <div class="calendar">@meetupEvent.StartTime.Day<em>@CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(meetupEvent.StartTime.Month)</em></div>
                                         </div>
                                         <div class="eventTime">@meetupEvent.StartTime.ToShortTimeString()</div>
                                     </div>
-                                    <div class="span8">
+                                    <div class="col-md-8">
                                         <p class="eventName">@meetupEvent.Name</p>
                                         <p>
                                             @(meetupEvent.Venue != null ? meetupEvent.Venue.Name : "Sted ikke bestemt")
@@ -50,8 +50,8 @@
     </div>
     <hr/>
     <div class="text-center">
-        <div class="row-fluid">
-            <div class="span12">
+        <div class="row">
+            <div class="col-md-12">
                 <a class="btn-twitter" href="@Model.JoinUrl"><img src="http://img.meetup.com/img/logo_45.png"/>Join</a>
                 @if (!string.IsNullOrEmpty(Model.TwitterName))
                 {

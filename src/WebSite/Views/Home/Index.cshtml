@@ -1,14 +1,14 @@
 ﻿@model Organization
 
-<div class="hero-unit">
-    <div class="row-fluid">
-        <div class="span3">
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-3">
             <figure>
                 <img alt="Roy Osherove hos NNUG Oslo" src="~/Content/images/Roy-Osherove-at-NNUG-Oslo.jpeg"/>
                 <figcaption><a href="https://twitter.com/RoyOsherove">Roy Osherove</a> hos NNUG Oslo.</figcaption>
             </figure>
         </div>
-        <div class="span9">
+        <div class="col-md-9">
             <p>Norwegian .NET User Group - NNUG - er en uavhengig brukergruppe for utviklere som jobber med Microsofts .NET teknologier. Formålet med NNUG er å utveksle erfaringer om .NET, gi råd og fokusere på best practises. Målgruppen for NNUG er utviklere og arkitekter.</p>
             <p>NNUG er nå etablert med følgende avdelinger:
                 @foreach (var chapter in Model.Chapters.TakeWhile(c => c != Model.Chapters.Last())) {
