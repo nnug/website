@@ -28,13 +28,12 @@ h3 {
   padding-top: 11px;
   padding-left: 6px;
 }
-/*.navbar-vimeo-button {
-    margin-top: -5px;
+.navbar-vimeo-button {
+  margin-top: -4px;
 }
-
 .navbar-vimeo-button img {
-    height: 30px;
-}*/
+  height: 30px;
+}
 .container .jumbotron {
   border-radius: 3px;
   padding: 48px;
