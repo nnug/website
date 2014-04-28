@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using NNUG.WebSite.Core.Integration;
 using NNUG.WebSite.Models;
+using ServiceStack;
 using ServiceStack.Text;
 
 namespace NNUG.WebSite.Core.ServiceAgent
@@ -16,7 +17,7 @@ namespace NNUG.WebSite.Core.ServiceAgent
 
         static MeetupApiClient()
         {
-            JsConfig.PropertyConvention = JsonPropertyConvention.Lenient;
+            JsConfig.PropertyConvention = PropertyConvention.Lenient;
         }
 
         public MeetupApiClient(IMeetupSettings meetupSettings, IHttpGetStringCommand httpGetStringCommand)

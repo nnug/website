@@ -28,6 +28,13 @@ h3 {
   padding-top: 11px;
   padding-left: 6px;
 }
+/*.navbar-vimeo-button {
+    margin-top: -5px;
+}
+
+.navbar-vimeo-button img {
+    height: 30px;
+}*/
 .container .jumbotron {
   border-radius: 3px;
   padding: 48px;
@@ -108,7 +115,9 @@ div.events {
   background: #ededef;
   background: -webkit-gradient(linear, left top, left bottom, from(#ededef), to(#cccccc));
   background: -moz-linear-gradient(top, #ededef, #cccccc);
-  font: bold 30px Arial #000000, Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 60px;
   text-align: center;
   color: #333333;
