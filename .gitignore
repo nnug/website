@@ -1,4 +1,8 @@
 packages/
+website.sln.ide/
+*.ncrunchsolution
+*.ncrunchproject
+*.GhostDoc.xml
 
 #OS junk files
 [Tt]humbs.db

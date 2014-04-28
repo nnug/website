@@ -30,10 +30,8 @@ h3 {
 }
 .container .jumbotron {
   border-radius: 3px;
-  /*padding-left: 48px;*/
-
   padding: 48px;
-  margin: 5px;
+  margin: 7px;
 }
 .col-md-3 {
   padding: 0px;
@@ -110,7 +108,7 @@ div.events {
   background: #ededef;
   background: -webkit-gradient(linear, left top, left bottom, from(#ededef), to(#cccccc));
   background: -moz-linear-gradient(top, #ededef, #cccccc);
-  font: bold 30px Arial Black, Arial, Helvetica, sans-serif;
+  font: bold 30px Arial #000000, Arial, Helvetica, sans-serif;
   line-height: 60px;
   text-align: center;
   color: #333333;
@@ -229,3 +227,4 @@ a:hover {
     float: left;
   }
 }
+/*# sourceMappingURL=site.css.map */
