@@ -22,6 +22,7 @@
     <IISExpressUseClassicPipelineMode />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -154,7 +155,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\font\fontawesome-webfont.svg" />
     <Content Include="Content\images\NNUG-logo.png" />
-    <Content Include="Content\images\nnug-bergen_200.png" />
+    <Content Include="Content\images\BitShift_200.png" />
     <Content Include="Content\images\nnug-haugesund_200.png" />
     <Content Include="Content\images\nnug-kristiansand_200.png" />
     <Content Include="Content\images\nnug-online_200.png" />
@@ -210,14 +211,14 @@
     <Content Include="Content\font\fontawesome-webfont.eot" />
     <Content Include="Content\font\FontAwesome.otf" />
     <EmbeddedResource Include="App_Data_DesignTime\groups-nnug-trondheim.json" />
-    <EmbeddedResource Include="App_Data_DesignTime\events-nnug-bergen.json" />
+    <EmbeddedResource Include="App_Data_DesignTime\events-BitShift.json" />
     <EmbeddedResource Include="App_Data_DesignTime\events-nnug-haugesund.json" />
     <EmbeddedResource Include="App_Data_DesignTime\events-nnug-kristiansand.json" />
     <EmbeddedResource Include="App_Data_DesignTime\events-nnug-stavanger.json" />
     <EmbeddedResource Include="App_Data_DesignTime\events-nnug-trondheim.json" />
     <EmbeddedResource Include="App_Data_DesignTime\events-nnug-vestfold.json" />
     <EmbeddedResource Include="App_Data_DesignTime\events-nnugoslo.json" />
-    <EmbeddedResource Include="App_Data_DesignTime\groups-nnug-bergen.json" />
+    <EmbeddedResource Include="App_Data_DesignTime\groups-BitShift.json" />
     <EmbeddedResource Include="App_Data_DesignTime\groups-nnug-haugesund.json" />
     <EmbeddedResource Include="App_Data_DesignTime\groups-nnug-kristiansand.json" />
     <EmbeddedResource Include="App_Data_DesignTime\groups-nnug-stavanger.json" />

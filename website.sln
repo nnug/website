@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{16656328-2B4F-4E78-AD6D-FEC95994C7F8}"
 EndProject
@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{6D6B32F9-F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{95DA6407-C624-4699-BAF3-0ADB499143DD}"
 	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
 		LICENSE.txt = LICENSE.txt
 		README.md = README.md
 	EndProjectSection
@@ -42,8 +44,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{2AEF021C-1DE1-4512-BCB8-A5CF26CB75C2} = {16656328-2B4F-4E78-AD6D-FEC95994C7F8}
 		{764E545C-9CB1-47A2-9019-C1AC9B184674} = {6D6B32F9-FAF4-4A50-A12C-CF7D1D881B74}
 		{2DF351D7-76D7-47B4-AB5A-D5285C090AF0} = {6D6B32F9-FAF4-4A50-A12C-CF7D1D881B74}
+		{2AEF021C-1DE1-4512-BCB8-A5CF26CB75C2} = {16656328-2B4F-4E78-AD6D-FEC95994C7F8}
 	EndGlobalSection
 EndGlobal
