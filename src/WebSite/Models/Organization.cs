@@ -17,7 +17,7 @@ namespace NNUG.WebSite.Models
                            {
                                //new Chapter(meetupSettings, httpGetStringCommand, "nnug-online", "NNUG Online", "NNUGOnline"),
                                new Chapter(meetupSettings, httpGetStringCommand, "nnugoslo", "NNUG Oslo", "NNUGOslo"),
-                               new Chapter(meetupSettings, httpGetStringCommand, "BitShift", "NNUG Bergen", "NNUGBergen"),
+                               new Chapter(meetupSettings, httpGetStringCommand, "bitshift", "BitShift", "NNUGBergen"),
                                new Chapter(meetupSettings, httpGetStringCommand, "nnug-trondheim", "NNUG Trondheim", "NNUGTrondheim"),
                                new Chapter(meetupSettings, httpGetStringCommand, "nnug-stavanger", "NNUG Stavanger", "NNUGStavanger"),
                                new Chapter(meetupSettings, httpGetStringCommand, "nnug-kristiansand", "NNUG Kristiansand", ""),
