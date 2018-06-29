@@ -19,7 +19,7 @@ namespace WebSite.Test.Integration.Integration
         [TestCase(Category = "Integration")]
         public async Task The_response_of_a_http_get_command_can_be_retrieved_as_a_string()
         {
-            var response = await _httpGetStringCommand.InvokeAsync(new Uri("http://www.vg.no"));
+            var response = await _httpGetStringCommand.InvokeAsync(new Uri("https://www.vg.no"));
 
             Assert.That(response, Has.Length.GreaterThan(0));
         }

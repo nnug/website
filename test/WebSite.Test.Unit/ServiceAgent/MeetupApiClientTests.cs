@@ -18,8 +18,8 @@ namespace WebSite.Test.Unit.ServiceAgent
         public void SetUp()
         {
             _meetupSettings = Substitute.For<IMeetupSettings>();
-            _meetupSettings.GetSignedGroupUri(Arg.Any<string>()).Returns(new Uri("http://api.meetup.com/2/groups?meetupgroupname1"));
-            _meetupSettings.GetSignedEventUri(Arg.Any<string>()).Returns(new Uri("http://api.meetup.com/2/events?meetupgroupname1"));
+            _meetupSettings.GetSignedGroupUri(Arg.Any<string>()).Returns(new Uri("https://api.meetup.com/2/groups?meetupgroupname1"));
+            _meetupSettings.GetSignedEventUri(Arg.Any<string>()).Returns(new Uri("https://api.meetup.com/2/events?meetupgroupname1"));
             _httpGetStringCommand = Substitute.For<IHttpGetStringCommand>();
             _httpGetStringCommand.InvokeAsync(Arg.Is<Uri>(u => u.Segments.Last() == "groups")).Returns(Task.FromResult(TestData.MeetupApiResponse.GroupNnugTrondheim));
             _httpGetStringCommand.InvokeAsync(Arg.Is<Uri>(u => u.Segments.Last() == "events")).Returns(Task.FromResult(TestData.MeetupApiResponse.EventsNnugTrondheim));
