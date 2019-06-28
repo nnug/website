@@ -19,7 +19,7 @@ namespace NNUG.WebSite.Controllers
             if (ConfigurationManager.AppSettings[AppSettingsKeyUseDesignTimeData]
                 .Equals("true", StringComparison.InvariantCultureIgnoreCase))
             {
-                return View(await Organization.Create(new MeetupSettings(), new HttpGetStringFromEmbeddedResourceCommand()));
+                return View(await Organization.Create(new HttpGetStringFromEmbeddedResourceCommand()));
             }
             
             return View(await RetrieveFromCache());
@@ -29,7 +29,7 @@ namespace NNUG.WebSite.Controllers
         {
             if (HttpContext.Cache[CacheKeyOrganization] == null)
             {
-                Organization organization = await Organization.Create(new MeetupSettings(), new HttpGetStringCommand());
+                Organization organization = await Organization.Create(new HttpGetStringCommand());
                 HttpContext.Cache.Add(CacheKeyOrganization, organization, null, DateTime.Now.AddHours(1),
                     Cache.NoSlidingExpiration, CacheItemPriority.Default, null);
             }

@@ -126,7 +126,6 @@
     <Compile Include="Core\ServiceAgent\IMeetupSettings.cs" />
     <Compile Include="Core\ServiceAgent\MeetupApiClient.cs" />
     <Compile Include="Core\ServiceAgent\MeetupResponse.cs" />
-    <Compile Include="Core\ServiceAgent\MeetupSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />

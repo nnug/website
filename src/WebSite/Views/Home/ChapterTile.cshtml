@@ -11,7 +11,6 @@
             @if (Model.MeetupGroup != null)
             {
                 <i class="icon-group"></i><span class="numberOfMembers">@Model.NumberOfMembers</span>
-                <div class="inline rateit" data-rateit-value="@Model.MeetupGroup.Rating.ToString(CultureInfo.InvariantCulture)" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
                 <hr/>
                 <ul>
                     @if (Model.MeetupGroup.UpcomingEvents.Count() == 0)
