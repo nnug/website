@@ -1,18 +1,2 @@
-﻿{
-"results": [ ],
-"meta": {
-"lon": "",
-"count": 0,
-"signed_url": "http://api.meetup.com/2/events?status=upcoming&order=time&limited_events=False&group_urlname=nnug-haugesund&desc=false&offset=0&format=json&only=name%2Cevent_url%2Crsvp_limit%2Cvenue%2Cutc_offset%2Ctime%2Cwaitlist_count%2Cyes_rsvp_count%2C&page=3&fields=&sig_id=97103452&sig=b52e3a15d5b95eac92a9d025621b0aca919686c5",
-"link": "http://www.meetup.com/2/events",
-"next": "",
-"total_count": 0,
-"url": "http://www.meetup.com/2/events?status=upcoming&order=time&limited_events=False&group_urlname=nnug-haugesund&desc=false&offset=0&format=json&only=name%2Cevent_url%2Crsvp_limit%2Cvenue%2Cutc_offset%2Ctime%2Cwaitlist_count%2Cyes_rsvp_count%2C&page=3&fields=&sign=true",
-"id": "",
-"title": "Meetup Events v2",
-"updated": 1375462971392,
-"description": "Access Meetup events using a group, member, or event id. Events in private groups are available only to authenticated members of those groups. To search events by topic or location, see [Open Events](/meetup_api/docs/2/open_events).",
-"method": "Events",
-"lat": ""
-}
-}
+﻿[
+]

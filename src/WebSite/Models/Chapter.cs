@@ -7,12 +7,10 @@ namespace NNUG.WebSite.Models
 {
     public class Chapter
     {
-        private readonly IMeetupSettings _meetupSettings;
         private readonly IHttpGetStringCommand _httpGetStringCommand;
 
-        public Chapter(IMeetupSettings meetupSettings, IHttpGetStringCommand httpGetStringCommand, string meetupGroupUrl, string name, string twitterName)
+        public Chapter(IHttpGetStringCommand httpGetStringCommand, string meetupGroupUrl, string name, string twitterName)
         {
-            _meetupSettings = meetupSettings;
             _httpGetStringCommand = httpGetStringCommand;
             Name = name;
             MeetupGroupUrl = meetupGroupUrl;
@@ -21,7 +19,7 @@ namespace NNUG.WebSite.Models
 
         public async Task LoadFromMeetupAsync()
         {
-            var meetupGroup = new MeetupGroup(_meetupSettings, _httpGetStringCommand, MeetupGroupUrl);
+            var meetupGroup = new MeetupGroup(_httpGetStringCommand, MeetupGroupUrl);
 
             MeetupGroup = await meetupGroup.LoadFromMeetupAsync();
         }

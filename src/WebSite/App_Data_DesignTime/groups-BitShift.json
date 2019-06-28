@@ -1,24 +1,4 @@
 ﻿{
-"results": [
-{
-"name": "NNUG Bergen",
-"rating": 4.68,
-"members": 339
-}
-],
-"meta": {
-"lon": "",
-"count": 1,
-"signed_url": "http://api.meetup.com/2/groups?radius=25.0&order=id&group_urlname=nnug-bergen&desc=false&offset=0&format=json&only=name%2Crating%2Cmembers&page=20&fields=&sig_id=97103452&sig=63430bfa5fc21311453dfa6634128ffe591646cf",
-"link": "http://www.meetup.com/2/groups",
-"next": "",
-"total_count": 1,
-"url": "http://www.meetup.com/2/groups?radius=25.0&order=id&group_urlname=nnug-bergen&desc=false&offset=0&format=json&only=name%2Crating%2Cmembers&page=20&fields=&sign=true",
-"id": "",
-"title": "Meetup Groups v2",
-"updated": 1373748601000,
-"description": """",
-"method": "Groups",
-"lat": ""
-}
+  "members": 1022,
+  "name": "Bitshift"
 }
