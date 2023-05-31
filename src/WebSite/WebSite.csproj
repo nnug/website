@@ -264,9 +264,13 @@
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
     <None Include="Properties\PublishProfiles\Local IIS.pubxml" />
-    <None Include="Scripts\jquery-2.1.0.intellisense.js" />
-    <Content Include="Scripts\jquery-2.1.0.js" />
-    <Content Include="Scripts\jquery-2.1.0.min.js" />
+    <Content Include="Scripts\jquery-3.7.0-vsdoc.js" />
+    <Content Include="Scripts\jquery-3.7.0.js" />
+    <Content Include="Scripts\jquery-3.7.0.min.js" />
+    <Content Include="Scripts\jquery-3.7.0.min.map" />
+    <Content Include="Scripts\jquery-3.7.0.slim.js" />
+    <Content Include="Scripts\jquery-3.7.0.slim.min.js" />
+    <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
     <Content Include="Scripts\jquery.rateit.js" />
     <Content Include="Scripts\jquery.rateit.min.js" />
     <Content Include="Scripts\less-1.4.1.min.js" />
@@ -292,7 +296,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Scripts\jquery-2.1.0.min.map" />
     <Content Include="Scripts\jquery.rateit.min.js.map" />
   </ItemGroup>
   <ItemGroup>
