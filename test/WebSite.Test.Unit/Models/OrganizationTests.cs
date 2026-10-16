@@ -25,10 +25,10 @@ namespace WebSite.Test.Unit.Models
         }
 
         [TestCase(Category = "Unit")]
-        public async Task NNUG_has_seven_chapters()
+        public async Task NNUG_has_four_chapters()
         {
             _organization = await Organization.Create(_httpGetStringCommand);
-            Assert.That(_organization.Chapters.Count, Is.EqualTo(7));
+            Assert.That(_organization.Chapters.Count, Is.EqualTo(4));
         }
 
         [TestCase(Category = "Unit")]
