@@ -24,5 +24,13 @@
     </div>
 </div>
 
-@{ Html.RenderBootstrapGridLayout(Model.Chapters, 4, "ChapterTile"); }
+@foreach (var row in Model.Chapters.Chunk(4))
+{
+    <div class="row">
+        @foreach (var chapter in row)
+        {
+            <partial name="ChapterTile" model="chapter" />
+        }
+    </div>
+}
 

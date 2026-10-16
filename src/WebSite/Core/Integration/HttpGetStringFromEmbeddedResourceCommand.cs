@@ -1,8 +1,3 @@
-﻿using System;
-using System.Diagnostics;
-using System.IO;
-using System.Threading.Tasks;
-
 namespace NNUG.WebSite.Core.Integration
 {
     public class HttpGetStringFromEmbeddedResourceCommand : IHttpGetStringCommand
@@ -22,14 +17,10 @@ namespace NNUG.WebSite.Core.Integration
 
         private string ReadEmbeddedTextFile(string embeddedResourceName)
         {
-            using (var stream = GetType().Assembly.GetManifestResourceStream(embeddedResourceName))
-            {
-                Debug.Assert(stream != null, "stream != null");
-                using (var reader = new StreamReader(stream))
-                {
-                    return reader.ReadToEnd();
-                }
-            }
+            using var stream = GetType().Assembly.GetManifestResourceStream(embeddedResourceName)
+                ?? throw new InvalidOperationException($"Embedded resource '{embeddedResourceName}' was not found.");
+            using var reader = new StreamReader(stream);
+            return reader.ReadToEnd();
         }
     }
 }

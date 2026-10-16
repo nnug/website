@@ -1,58 +1,55 @@
-﻿using System;
-using System.Configuration;
-using System.Threading.Tasks;
-using System.Web.Caching;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using NNUG.WebSite.Core.Integration;
-using NNUG.WebSite.Core.ServiceAgent;
 using NNUG.WebSite.Models;
 
 namespace NNUG.WebSite.Controllers
 {
     public class HomeController : Controller
     {
-        private const string AppSettingsKeyUseDesignTimeData = "useDesignTimeData";
         private const string CacheKeyOrganization = "Organization";
 
-        public async Task<ActionResult> Index()
+        private readonly IHttpGetStringCommand _httpGetStringCommand;
+        private readonly IMemoryCache _cache;
+
+        public HomeController(IHttpGetStringCommand httpGetStringCommand, IMemoryCache cache)
         {
-            if (ConfigurationManager.AppSettings[AppSettingsKeyUseDesignTimeData]
-                .Equals("true", StringComparison.InvariantCultureIgnoreCase))
+            _httpGetStringCommand = httpGetStringCommand;
+            _cache = cache;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var organization = await _cache.GetOrCreateAsync(CacheKeyOrganization, entry =>
             {
-                return View(await Organization.Create(new HttpGetStringFromEmbeddedResourceCommand()));
-            }
-            
-            return View(await RetrieveFromCache());
+                entry.AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(1);
+                return Organization.Create(_httpGetStringCommand);
+            });
+
+            return View(organization);
         }
 
-        private async Task<Organization> RetrieveFromCache()
-        {
-            if (HttpContext.Cache[CacheKeyOrganization] == null)
-            {
-                Organization organization = await Organization.Create(new HttpGetStringCommand());
-                HttpContext.Cache.Add(CacheKeyOrganization, organization, null, DateTime.Now.AddHours(1),
-                    Cache.NoSlidingExpiration, CacheItemPriority.Default, null);
-            }
-
-            return (Organization)HttpContext.Cache[CacheKeyOrganization];
-        }
-
-        public ActionResult About()
+        public IActionResult About()
         {
             return View();
         }
 
-        public ActionResult Faq()
+        public IActionResult Faq()
         {
             return View();
         }
 
-        public ActionResult Speaker()
+        public IActionResult Speaker()
         {
             return View();
         }
 
-        public ActionResult StartChapter()
+        public IActionResult StartChapter()
+        {
+            return View();
+        }
+
+        public IActionResult Error()
         {
             return View();
         }

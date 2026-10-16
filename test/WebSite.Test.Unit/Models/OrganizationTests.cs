@@ -20,8 +20,8 @@ namespace WebSite.Test.Unit.Models
         public void SetUp()
         {
             _httpGetStringCommand = Substitute.For<IHttpGetStringCommand>();
-            _httpGetStringCommand.InvokeAsync(Arg.Is<Uri>(u => !u.Segments.Last().EndsWith("/events"))).Returns(Task.FromResult(TestData.MeetupApiResponse.GroupNnugTrondheim));
-            _httpGetStringCommand.InvokeAsync(Arg.Is<Uri>(u => u.Segments.Last().EndsWith("/events"))).Returns(Task.FromResult(TestData.MeetupApiResponse.EventsNnugTrondheim));
+            _httpGetStringCommand.InvokeAsync(Arg.Is<Uri>(u => u.Segments.Last() != "events")).Returns(Task.FromResult(TestData.MeetupApiResponse.GroupNnugTrondheim));
+            _httpGetStringCommand.InvokeAsync(Arg.Is<Uri>(u => u.Segments.Last() == "events")).Returns(Task.FromResult(TestData.MeetupApiResponse.EventsNnugTrondheim));
         }
 
         [TestCase(Category = "Unit")]

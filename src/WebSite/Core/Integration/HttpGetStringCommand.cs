@@ -1,15 +1,17 @@
-﻿using System;
-using System.Net.Http;
-using System.Threading.Tasks;
-
 namespace NNUG.WebSite.Core.Integration
 {
     public class HttpGetStringCommand : IHttpGetStringCommand
     {
-        public async Task<string> InvokeAsync(Uri requestUri)
+        private readonly HttpClient _httpClient;
+
+        public HttpGetStringCommand(HttpClient httpClient)
         {
-            var httpClient = new HttpClient();
-            return await httpClient.GetStringAsync(requestUri);
+            _httpClient = httpClient;
+        }
+
+        public Task<string> InvokeAsync(Uri requestUri)
+        {
+            return _httpClient.GetStringAsync(requestUri);
         }
     }
 }

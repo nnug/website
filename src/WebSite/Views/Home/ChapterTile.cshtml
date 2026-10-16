@@ -55,7 +55,7 @@
                     <a class="btn-twitter" href="@Model.JoinUrl"><img src="https://img.meetup.com/img/logo_45.png"/>Join</a>
                     @if (!string.IsNullOrEmpty(Model.TwitterName))
                     {
-                        @(Twitter.FollowerButton(Model.TwitterName, false))
+                        <partial name="_TwitterFollowButton" model="new TwitterFollowButton(Model.TwitterName, false)" />
                     }
                 </div>
             </div>

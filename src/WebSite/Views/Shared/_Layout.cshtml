@@ -9,10 +9,11 @@
         <meta name="description" content="Homepage for Norwegian .NET User Group">
         <meta name="author" content="Joar Øyen">     
         
-        @Styles.Render("~/content/style/css")
-        @Styles.Render("~/content/style/css/fontawesome")
-        @Styles.Render("~/content/rateit")
-        @Scripts.Render("~/scripts/modernizr")
+        <link href="~/Content/bootstrap/bootstrap.css" rel="stylesheet" asp-append-version="true" />
+        <link href="~/Content/style/site.css" rel="stylesheet" asp-append-version="true" />
+        <link href="~/Content/less/fontawesome/font-awesome.css" rel="stylesheet" asp-append-version="true" />
+        <link href="~/Content/rateit.css" rel="stylesheet" asp-append-version="true" />
+        <script src="~/Scripts/modernizr-2.7.2.js" asp-append-version="true"></script>
 
     </head>
     <body>
@@ -44,7 +45,7 @@
                                     <li>@Html.ActionLink("Starte ny avdeling", "StartChapter", "Home")</li>
                                 </ul>
                             </li>
-                            <li class="navbar-twitter-button">@Twitter.FollowerButton("nnug", true)</li>
+                            <li class="navbar-twitter-button"><partial name="_TwitterFollowButton" model='new TwitterFollowButton("nnug", true)' /></li>
                         </ul>
                     </div>
                 </div>
@@ -61,8 +62,9 @@
             </div>
         </footer>
 
-        @Scripts.Render("~/scripts/jquery")
-        @Scripts.Render("~/scripts/bootstrap")
+        <script src="~/Scripts/jquery-3.7.0.js" asp-append-version="true"></script>
+        <script src="~/Scripts/jquery.rateit.js" asp-append-version="true"></script>
+        <script src="~/Scripts/bootstrap.js" asp-append-version="true"></script>
 
         @RenderSection("scripts", required: false)
     </body>

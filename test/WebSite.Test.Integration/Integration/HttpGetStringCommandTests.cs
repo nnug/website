@@ -13,7 +13,7 @@ namespace WebSite.Test.Integration.Integration
         [SetUp]
         public void SetUp()
         {
-            _httpGetStringCommand = new HttpGetStringCommand();
+            _httpGetStringCommand = new HttpGetStringCommand(new HttpClient());
         }
 
         [TestCase(Category = "Integration")]

@@ -1,6 +1,6 @@
 ﻿[
   {
-    "outputFile": "Content/style/site.css",
-    "inputFile": "Content/style/site.less"
+    "outputFile": "wwwroot/Content/style/site.css",
+    "inputFile": "wwwroot/Content/style/site.less"
   }
 ]

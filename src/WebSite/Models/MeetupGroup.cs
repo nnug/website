@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Net.Http;
-using System.Threading.Tasks;
+using System.Text.Json;
 using NNUG.WebSite.Core.Integration;
 using NNUG.WebSite.Core.ServiceAgent;
 
@@ -10,6 +8,11 @@ namespace NNUG.WebSite.Models
     {
         private readonly IHttpGetStringCommand _httpGetStringCommand;
         private readonly string _meetupGroupUrl;
+
+        // Used by the JSON deserializer.
+        public MeetupGroup()
+        {
+        }
 
         public MeetupGroup(IHttpGetStringCommand httpGetStringCommand, string meetupGroupUrl)
         {
@@ -27,7 +30,7 @@ namespace NNUG.WebSite.Models
 
                 return groupInformation;
             }
-            catch (HttpRequestException)
+            catch (Exception ex) when (ex is HttpRequestException or JsonException)
             {
                 return null;
             }

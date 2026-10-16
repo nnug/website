@@ -1,23 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text.Json;
 using NNUG.WebSite.Core.Integration;
 using NNUG.WebSite.Models;
-using ServiceStack;
-using ServiceStack.Text;
 
 namespace NNUG.WebSite.Core.ServiceAgent
 {
     public class MeetupApiClient : IMeetupApiClient
     {
         public static readonly Uri BaseUri = new Uri("http://www.meetup.com");
-        private readonly IHttpGetStringCommand _httpGetStringCommand;
 
-        static MeetupApiClient()
+        private static readonly JsonSerializerOptions JsonOptions = new JsonSerializerOptions
         {
-            JsConfig.PropertyConvention = PropertyConvention.Lenient;
-        }
+            PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseLower,
+            PropertyNameCaseInsensitive = true
+        };
+
+        private readonly IHttpGetStringCommand _httpGetStringCommand;
 
         public MeetupApiClient(IHttpGetStringCommand httpGetStringCommand)
         {
@@ -47,7 +44,7 @@ namespace NNUG.WebSite.Core.ServiceAgent
         private async Task<T> GetJson<T>(Uri requestUri)
         {
             var response = await _httpGetStringCommand.InvokeAsync(requestUri);
-            return response.FromJson<T>();
+            return JsonSerializer.Deserialize<T>(response, JsonOptions);
         }
     }
 }
