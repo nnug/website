@@ -1,0 +1,29 @@
+---
+layout: default
+---
+{%- assign t = site.data.i18n[page.lang] -%}
+<section class="hero">
+    <div>
+        <span class="eyebrow">Norwegian .NET User Group</span>
+        <h1>{{ t.hero_title }}</h1>
+        {{ content }}
+        <div class="actions">
+            <a class="button button-primary" href="#chapters">{{ t.find_chapter }}</a>
+            <a class="button button-secondary" href="{{ t.start_chapter.url | relative_url }}">{{ t.start_chapter.title }}</a>
+        </div>
+    </div>
+    <figure>
+        <img alt="Roy Osherove {{ t.photo_caption | remove: '.' }}" src="{{ '/assets/images/Roy-Osherove-at-NNUG-Oslo.jpeg' | relative_url }}" />
+        <figcaption><a href="https://x.com/RoyOsherove">Roy Osherove</a> {{ t.photo_caption }}</figcaption>
+    </figure>
+</section>
+
+<section id="chapters" aria-labelledby="chapters-heading">
+    <h2 class="section-heading" id="chapters-heading">{{ t.chapters_heading }}</h2>
+    <p class="section-intro">{{ t.chapters_intro }}</p>
+    <div class="chapter-grid">
+        {%- for chapter in site.data.chapters %}
+        {% include chapter-tile.html chapter=chapter %}
+        {%- endfor %}
+    </div>
+</section>

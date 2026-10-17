@@ -7,71 +7,51 @@
 <html lang="{{ page.lang }}">
     <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
-        <link href="{{ '/favicon.ico' | relative_url }}" rel="shortcut icon" type="image/x-icon" />
-
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="{{ t.description }}">
-        <meta name="author" content="Joar Øyen">
+        <meta name="description" content="{{ t.description }}" />
+        <meta name="author" content="Joar Øyen" />
+        <meta name="theme-color" content="#002d62" />
+        <link href="{{ '/favicon.ico' | relative_url }}" rel="icon" />
 
         {%- if translation %}
         <link rel="alternate" hreflang="{{ page.lang }}" href="{{ page.url | absolute_url }}" />
         <link rel="alternate" hreflang="{{ other_lang }}" href="{{ translation.url | absolute_url }}" />
         {%- endif %}
 
-        <link href="{{ '/assets/css/bootstrap.min.css' | relative_url }}" rel="stylesheet" />
         <link href="{{ '/assets/css/site.css' | relative_url }}" rel="stylesheet" />
     </head>
     <body>
-        <header>
-            <div class="navbar navbar-default navbar-fixed-top">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-
-                        <a class="navbar-brand" href="{{ t.home_url | relative_url }}">
-                            <img alt="NNUG logo" src="{{ '/assets/images/NNUG-logo.png' | relative_url }}" />
-                            <span class="brand-text">Norwegian .NET User Group</span>
-                        </a>
-                    </div>
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="{{ t.home_url | relative_url }}">{{ t.home }}</a></li>
-                            <li class="dropdown">
-                                <!-- No href: Bootstrap 3.0's dropdown passes href="#" to jQuery 3, which throws. -->
-                                <a role="button" tabindex="0" style="cursor: pointer" class="dropdown-toggle" data-toggle="dropdown">{{ t.about_menu }} <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="{{ t.about.url | relative_url }}">{{ t.about.title }}</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="{{ t.faq.url | relative_url }}">{{ t.faq.title }}</a></li>
-                                    <li><a href="{{ t.speakers.url | relative_url }}">{{ t.speakers.title }}</a></li>
-                                    <li><a href="{{ t.start_chapter.url | relative_url }}">{{ t.start_chapter.title }}</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="{{ translation_url | relative_url }}" hreflang="{{ other_lang }}" lang="{{ other_lang }}"><img class="lang-flag" alt="" src="{{ '/assets/images/flags/' | append: t.switch_flag | append: '.svg' | relative_url }}" />{{ t.switch_to }}</a></li>
-                            <li class="navbar-twitter-button">{% include twitter-follow-button.html name="nnug" show_screen_name=true %}</li>
-                        </ul>
-                    </div>
+        <header class="site-header">
+            <div class="container">
+                <a class="brand" href="{{ t.home_url | relative_url }}">
+                    <img alt="NNUG" src="{{ '/assets/images/NNUG-logo.png' | relative_url }}" />
+                    <span class="brand-text">Norwegian .NET User Group</span>
+                </a>
+                <div class="desktop-nav">
+                    {% include nav.html translation_url=translation_url other_lang=other_lang %}
                 </div>
+                <details class="menu-toggle">
+                    <summary>{{ t.menu }}</summary>
+                    {% include nav.html translation_url=translation_url other_lang=other_lang %}
+                </details>
             </div>
         </header>
 
-        <div class="container">
-            {{ content }}
-        </div>
-
-        <footer>
+        <main>
             <div class="container">
-                Copyright &copy; {{ site.time | date: '%Y' }} Norwegian .NET User Group
+                {{ content }}
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <span>&copy; {{ site.time | date: '%Y' }} Norwegian .NET User Group</span>
+                <ul>
+                    <li><a href="https://x.com/nnug">X: @nnug</a></li>
+                    <li><a href="https://github.com/{{ site.repository }}">GitHub</a></li>
+                </ul>
             </div>
         </footer>
-
-        <script src="{{ '/assets/js/jquery-3.7.0.min.js' | relative_url }}"></script>
-        <script src="{{ '/assets/js/bootstrap.min.js' | relative_url }}"></script>
-        <script async src="https://platform.twitter.com/widgets.js"></script>
     </body>
 </html>

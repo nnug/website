@@ -1,0 +1,11 @@
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- assign nav_keys = "about,faq,speakers,start_chapter" | split: "," -%}
+<nav class="site-nav" aria-label="{{ t.menu }}">
+    <ul>
+        {%- for key in nav_keys %}
+        {%- assign item = t[key] %}
+        <li><a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.nav }}</a></li>
+        {%- endfor %}
+        <li><a class="lang-switch" href="{{ include.translation_url | relative_url }}" hreflang="{{ include.other_lang }}" lang="{{ include.other_lang }}"><img class="lang-flag" alt="" src="{{ '/assets/images/flags/' | append: t.switch_flag | append: '.svg' | relative_url }}" />{{ t.switch_to }}</a></li>
+    </ul>
+</nav>

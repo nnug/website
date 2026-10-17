@@ -6,29 +6,45 @@ nb:
   home: Forsiden
   home_url: /
   about_menu: Om NNUG
-  about: { title: Om NNUG, url: /om-nnug/ }
-  faq: { title: Ofte stilte spørsmål, url: /faq/ }
-  speakers: { title: Tips til foredragsholdere, url: /foredragsholdere/ }
-  start_chapter: { title: Starte ny avdeling, url: /ny-avdeling/ }
+  about: { title: Om NNUG, nav: Om NNUG, url: /om-nnug/ }
+  faq: { title: Ofte stilte spørsmål, nav: Spørsmål og svar, url: /faq/ }
+  speakers: { title: Tips til foredragsholdere, nav: For foredragsholdere, url: /foredragsholdere/ }
+  start_chapter: { title: Starte ny avdeling, nav: Start en avdeling, url: /ny-avdeling/ }
   switch_to: English
   switch_flag: gb
   and: og
   upcoming_events: Se kommende møter på meetup.com
   join: Join
   meetup_group_for: Meetup-gruppe for
+  menu: Meny
+  hero_title: Norges brukergruppe for .NET-utviklere
+  find_chapter: Finn din avdeling
+  chapters_heading: Avdelinger
+  chapters_intro: Møtene arrangeres av lokale avdelinger. Bli med på Meetup for å få beskjed om nye møter.
+  join_meetup: Bli med på Meetup
+  follow_on_x: Følg på X
+  photo_caption: hos NNUG Oslo.
 
 en:
   description: Homepage for Norwegian .NET User Group
   home: Home
   home_url: /en/
   about_menu: About NNUG
-  about: { title: About NNUG, url: /en/about/ }
-  faq: { title: Frequently asked questions, url: /en/faq/ }
-  speakers: { title: Tips for speakers, url: /en/speakers/ }
-  start_chapter: { title: Start a new chapter, url: /en/start-a-chapter/ }
+  about: { title: About NNUG, nav: About, url: /en/about/ }
+  faq: { title: Frequently asked questions, nav: FAQ, url: /en/faq/ }
+  speakers: { title: Tips for speakers, nav: For speakers, url: /en/speakers/ }
+  start_chapter: { title: Start a new chapter, nav: Start a chapter, url: /en/start-a-chapter/ }
   switch_to: Norsk
   switch_flag: "no"
   and: and
   upcoming_events: See upcoming meetups on meetup.com
   join: Join
   meetup_group_for: Meetup group for
+  menu: Menu
+  hero_title: Norway's user group for .NET developers
+  find_chapter: Find your chapter
+  chapters_heading: Chapters
+  chapters_intro: Meetups are run by local chapters. Join on Meetup to hear about new events.
+  join_meetup: Join on Meetup
+  follow_on_x: Follow on X
+  photo_caption: at NNUG Oslo.

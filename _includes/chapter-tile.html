@@ -1,24 +1,16 @@
 {% assign chapter = include.chapter %}
 {% assign t = site.data.i18n[page.lang] %}
-<div class="col-md-3">
-    <div class="content-block">
-        <a id="{{ chapter.meetup }}"></a>
-        <div class="text-center">
-            <a href="https://www.meetup.com/{{ chapter.meetup }}/"><img alt="{{ t.meetup_group_for }} {{ chapter.name }}" src="{{ '/assets/images/' | append: chapter.logo | relative_url }}"/></a>
-        </div>
-        <div class="events">
-            <a href="https://www.meetup.com/{{ chapter.meetup }}/events/">{{ t.upcoming_events }}</a>
-        </div>
-        <hr/>
-        <div class="text-center">
-            <div class="row">
-                <div class="col-md-12">
-                    <a class="btn-twitter" href="https://www.meetup.com/{{ chapter.meetup }}/join/"><img alt="" src="https://img.meetup.com/img/logo_45.png"/>{{ t.join }}</a>
-                    {% if chapter.twitter %}
-                        {% include twitter-follow-button.html name=chapter.twitter %}
-                    {% endif %}
-                </div>
-            </div>
-        </div>
+<article class="chapter-card" id="{{ chapter.meetup }}">
+    <a class="chapter-logo" href="https://www.meetup.com/{{ chapter.meetup }}/">
+        <img alt="{{ t.meetup_group_for }} {{ chapter.name }}" src="{{ '/assets/images/' | append: chapter.logo | relative_url }}" />
+    </a>
+    <div class="chapter-body">
+        <a class="all-events" href="https://www.meetup.com/{{ chapter.meetup }}/events/">{{ t.upcoming_events }} →</a>
     </div>
-</div>
+    <div class="chapter-footer">
+        <a class="button button-primary" href="https://www.meetup.com/{{ chapter.meetup }}/join/">{{ t.join_meetup }}</a>
+        {%- if chapter.twitter %}
+        <a class="button button-secondary" href="https://x.com/{{ chapter.twitter }}" aria-label="{{ t.follow_on_x }}: @{{ chapter.twitter }}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@{{ chapter.twitter }}</a>
+        {%- endif %}
+    </div>
+</article>
