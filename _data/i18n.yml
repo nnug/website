@@ -16,6 +16,9 @@ nb:
   upcoming_events: Se kommende møter på meetup.com
   join: Join
   meetup_group_for: Meetup-gruppe for
+  no_upcoming_events: Ingen kommende møter
+  venue_tbd: Sted ikke bestemt
+  months: [januar, februar, mars, april, mai, juni, juli, august, september, oktober, november, desember]
 
 en:
   description: Homepage for Norwegian .NET User Group
@@ -32,3 +35,6 @@ en:
   upcoming_events: See upcoming meetups on meetup.com
   join: Join
   meetup_group_for: Meetup group for
+  no_upcoming_events: No upcoming meetups
+  venue_tbd: Venue to be announced
+  months: [January, February, March, April, May, June, July, August, September, October, November, December]

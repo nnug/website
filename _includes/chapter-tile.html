@@ -7,6 +7,32 @@
             <a href="https://www.meetup.com/{{ chapter.meetup }}/"><img alt="{{ t.meetup_group_for }} {{ chapter.name }}" src="{{ '/assets/images/' | append: chapter.logo | relative_url }}"/></a>
         </div>
         <div class="events">
+            {%- assign events = site.data.events[chapter.meetup] -%}
+            {%- if events %}
+            <hr/>
+            <ul>
+                {%- for event in events %}
+                {%- assign month_index = event.month | minus: 1 %}
+                <li>
+                    <a href="{{ event.url }}">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="calendar">{{ event.day }}<em>{{ t.months[month_index] }}</em></div>
+                                <div class="eventTime">{{ event.time }}</div>
+                            </div>
+                            <div class="col-md-8">
+                                <p class="eventName">{{ event.name }}</p>
+                                <p>{{ event.venue | default: t.venue_tbd }}</p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                {%- else %}
+                <li>{{ t.no_upcoming_events }}</li>
+                {%- endfor %}
+            </ul>
+            <hr/>
+            {%- endif %}
             <a href="https://www.meetup.com/{{ chapter.meetup }}/events/">{{ t.upcoming_events }}</a>
         </div>
         <hr/>

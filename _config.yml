@@ -2,6 +2,7 @@ title: NNUG - Norwegian .NET User Group
 description: Homepage for Norwegian .NET User Group
 lang: nb
 url: https://www.nnug.no
+repository: nnug/website
 permalink: pretty
 
 defaults:
@@ -18,3 +19,4 @@ exclude:
   - LICENSE.txt
   - Gemfile
   - Gemfile.lock
+  - vendor
