@@ -1,0 +1,24 @@
+# Chapters shown on the front page, in display order.
+# meetup: the group's URL name on meetup.com
+# logo:   file in assets/images
+# twitter: Twitter/X handle without @ (leave empty if none)
+
+- name: NNUG Oslo
+  meetup: nnugoslo
+  logo: nnugoslo_200.png
+  twitter: NNUGOslo
+
+- name: NNUG Trondheim
+  meetup: nnug-trondheim
+  logo: nnug-trondheim_200.png
+  twitter: NNUGTrondheim
+
+- name: NNUG Stavanger
+  meetup: nnug-stavanger
+  logo: nnug-stavanger_200.png
+  twitter: NNUGStavanger
+
+- name: NNUG Kristiansand
+  meetup: nnug-kristiansand
+  logo: nnug-kristiansand_200.png
+  twitter:

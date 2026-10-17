@@ -1,0 +1,14 @@
+title: NNUG - Norwegian .NET User Group
+description: Homepage for Norwegian .NET User Group
+lang: nb
+url: https://www.nnug.no
+permalink: pretty
+
+plugins:
+  - jekyll-redirect-from
+
+exclude:
+  - README.md
+  - LICENSE.txt
+  - Gemfile
+  - Gemfile.lock
