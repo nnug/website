@@ -1,0 +1,32 @@
+# Interface text per language. Page front matter sets `lang` (nb or en);
+# pages with the same `ref` are translations of each other.
+
+nb:
+  description: Hjemmeside for Norwegian .NET User Group
+  home: Forsiden
+  home_url: /
+  about_menu: Om NNUG
+  about: { title: Om NNUG, url: /om-nnug/ }
+  faq: { title: Ofte stilte spørsmål, url: /faq/ }
+  speakers: { title: Tips til foredragsholdere, url: /foredragsholdere/ }
+  start_chapter: { title: Starte ny avdeling, url: /ny-avdeling/ }
+  switch_to: English
+  and: og
+  upcoming_events: Se kommende møter på meetup.com
+  join: Join
+  meetup_group_for: Meetup-gruppe for
+
+en:
+  description: Homepage for Norwegian .NET User Group
+  home: Home
+  home_url: /en/
+  about_menu: About NNUG
+  about: { title: About NNUG, url: /en/about/ }
+  faq: { title: Frequently asked questions, url: /en/faq/ }
+  speakers: { title: Tips for speakers, url: /en/speakers/ }
+  start_chapter: { title: Start a new chapter, url: /en/start-a-chapter/ }
+  switch_to: Norsk
+  and: and
+  upcoming_events: See upcoming meetups on meetup.com
+  join: Join
+  meetup_group_for: Meetup group for

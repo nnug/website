@@ -1,5 +1,6 @@
 ---
 layout: page
+ref: faq
 title: Ofte stilte spørsmål
 redirect_from: /Home/Faq/
 ---

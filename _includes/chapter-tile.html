@@ -1,18 +1,19 @@
 {% assign chapter = include.chapter %}
+{% assign t = site.data.i18n[page.lang] %}
 <div class="col-md-3">
     <div class="content-block">
         <a id="{{ chapter.meetup }}"></a>
         <div class="text-center">
-            <a href="https://www.meetup.com/{{ chapter.meetup }}/"><img alt="Meetup group for {{ chapter.name }}" src="{{ '/assets/images/' | append: chapter.logo | relative_url }}"/></a>
+            <a href="https://www.meetup.com/{{ chapter.meetup }}/"><img alt="{{ t.meetup_group_for }} {{ chapter.name }}" src="{{ '/assets/images/' | append: chapter.logo | relative_url }}"/></a>
         </div>
         <div class="events">
-            <a href="https://www.meetup.com/{{ chapter.meetup }}/events/">Se kommende møter på meetup.com</a>
+            <a href="https://www.meetup.com/{{ chapter.meetup }}/events/">{{ t.upcoming_events }}</a>
         </div>
         <hr/>
         <div class="text-center">
             <div class="row">
                 <div class="col-md-12">
-                    <a class="btn-twitter" href="https://www.meetup.com/{{ chapter.meetup }}/join/"><img alt="" src="https://img.meetup.com/img/logo_45.png"/>Join</a>
+                    <a class="btn-twitter" href="https://www.meetup.com/{{ chapter.meetup }}/join/"><img alt="" src="https://img.meetup.com/img/logo_45.png"/>{{ t.join }}</a>
                     {% if chapter.twitter %}
                         {% include twitter-follow-button.html name=chapter.twitter %}
                     {% endif %}

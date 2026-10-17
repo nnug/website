@@ -1,5 +1,6 @@
 ---
 layout: page
+ref: about
 title: Om NNUG
 redirect_from: /Home/About/
 ---

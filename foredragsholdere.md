@@ -1,5 +1,6 @@
 ---
 layout: page
+ref: speakers
 title: Tips til foredragsholdere
 redirect_from: /Home/Speaker/
 ---

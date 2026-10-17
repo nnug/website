@@ -11,6 +11,10 @@ Editing
 - Chapters on the front page come from `_data/chapters.yml`. Add a logo to
   `assets/images` when adding a chapter.
 - Shared page markup is in `_layouts` and `_includes`.
+- English versions of every page are in `en/`. A Norwegian page and its
+  translation share the same `ref` in their front matter, which the language
+  switcher uses to link between them. Menu and button text for both
+  languages is in `_data/i18n.yml`.
 
 Old ASP.NET URLs (`/Home/About` etc.) redirect to the new pages.
 

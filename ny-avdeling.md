@@ -1,5 +1,6 @@
 ---
 layout: page
+ref: start-chapter
 title: Starte ny avdeling
 redirect_from: /Home/StartChapter/
 ---

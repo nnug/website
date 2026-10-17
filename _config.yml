@@ -4,6 +4,12 @@ lang: nb
 url: https://www.nnug.no
 permalink: pretty
 
+defaults:
+  - scope: { path: "" }
+    values: { lang: nb }
+  - scope: { path: "en" }
+    values: { lang: en }
+
 plugins:
   - jekyll-redirect-from
 

@@ -1,13 +1,23 @@
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- assign other_lang = "en" -%}{%- if page.lang == "en" -%}{%- assign other_lang = "nb" -%}{%- endif -%}
+{%- assign translation = nil -%}
+{%- if page.ref -%}{%- assign translation = site.pages | where: "ref", page.ref | where: "lang", other_lang | first -%}{%- endif -%}
+{%- if translation -%}{%- assign translation_url = translation.url -%}{%- else -%}{%- assign translation_url = site.data.i18n[other_lang].home_url -%}{%- endif -%}
 <!DOCTYPE html>
-<html lang="{{ site.lang }}">
+<html lang="{{ page.lang }}">
     <head>
         <meta charset="utf-8" />
         <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
         <link href="{{ '/favicon.ico' | relative_url }}" rel="shortcut icon" type="image/x-icon" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="{{ site.description }}">
+        <meta name="description" content="{{ t.description }}">
         <meta name="author" content="Joar Øyen">
+
+        {%- if translation %}
+        <link rel="alternate" hreflang="{{ page.lang }}" href="{{ page.url | absolute_url }}" />
+        <link rel="alternate" hreflang="{{ other_lang }}" href="{{ translation.url | absolute_url }}" />
+        {%- endif %}
 
         <link href="{{ '/assets/css/bootstrap.min.css' | relative_url }}" rel="stylesheet" />
         <link href="{{ '/assets/css/site.css' | relative_url }}" rel="stylesheet" />
@@ -23,25 +33,26 @@
                             <span class="icon-bar"></span>
                         </button>
 
-                        <a class="navbar-brand" href="{{ '/' | relative_url }}">
+                        <a class="navbar-brand" href="{{ t.home_url | relative_url }}">
                             <img alt="NNUG logo" src="{{ '/assets/images/NNUG-logo.png' | relative_url }}" />
                             <span class="brand-text">Norwegian .NET User Group</span>
                         </a>
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="{{ '/' | relative_url }}">Forsiden</a></li>
+                            <li><a href="{{ t.home_url | relative_url }}">{{ t.home }}</a></li>
                             <li class="dropdown">
                                 <!-- No href: Bootstrap 3.0's dropdown passes href="#" to jQuery 3, which throws. -->
-                                <a role="button" tabindex="0" style="cursor: pointer" class="dropdown-toggle" data-toggle="dropdown">Om NNUG <b class="caret"></b></a>
+                                <a role="button" tabindex="0" style="cursor: pointer" class="dropdown-toggle" data-toggle="dropdown">{{ t.about_menu }} <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="{{ '/om-nnug/' | relative_url }}">Om NNUG</a></li>
+                                    <li><a href="{{ t.about.url | relative_url }}">{{ t.about.title }}</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="{{ '/faq/' | relative_url }}">Ofte stilte spørsmål</a></li>
-                                    <li><a href="{{ '/foredragsholdere/' | relative_url }}">Tips til foredragsholdere</a></li>
-                                    <li><a href="{{ '/ny-avdeling/' | relative_url }}">Starte ny avdeling</a></li>
+                                    <li><a href="{{ t.faq.url | relative_url }}">{{ t.faq.title }}</a></li>
+                                    <li><a href="{{ t.speakers.url | relative_url }}">{{ t.speakers.title }}</a></li>
+                                    <li><a href="{{ t.start_chapter.url | relative_url }}">{{ t.start_chapter.title }}</a></li>
                                 </ul>
                             </li>
+                            <li><a href="{{ translation_url | relative_url }}" hreflang="{{ other_lang }}" lang="{{ other_lang }}">{{ t.switch_to }}</a></li>
                             <li class="navbar-twitter-button">{% include twitter-follow-button.html name="nnug" show_screen_name=true %}</li>
                         </ul>
                     </div>
