@@ -32,7 +32,8 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="{{ '/' | relative_url }}">Forsiden</a></li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Om NNUG <b class="caret"></b></a>
+                                <!-- No href: Bootstrap 3.0's dropdown passes href="#" to jQuery 3, which throws. -->
+                                <a role="button" tabindex="0" style="cursor: pointer" class="dropdown-toggle" data-toggle="dropdown">Om NNUG <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="{{ '/om-nnug/' | relative_url }}">Om NNUG</a></li>
                                     <li class="divider"></li>
