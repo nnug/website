@@ -52,7 +52,7 @@
                                     <li><a href="{{ t.start_chapter.url | relative_url }}">{{ t.start_chapter.title }}</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{{ translation_url | relative_url }}" hreflang="{{ other_lang }}" lang="{{ other_lang }}">{{ t.switch_to }}</a></li>
+                            <li><a href="{{ translation_url | relative_url }}" hreflang="{{ other_lang }}" lang="{{ other_lang }}"><img class="lang-flag" alt="" src="{{ '/assets/images/flags/' | append: t.switch_flag | append: '.svg' | relative_url }}" />{{ t.switch_to }}</a></li>
                             <li class="navbar-twitter-button">{% include twitter-follow-button.html name="nnug" show_screen_name=true %}</li>
                         </ul>
                     </div>

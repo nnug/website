@@ -236,3 +236,9 @@ a:hover {
   }
 }
 /*# sourceMappingURL=site.css.map */
+.lang-flag {
+  height: 12px;
+  margin-right: 6px;
+  vertical-align: -1px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+}

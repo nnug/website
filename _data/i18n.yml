@@ -11,6 +11,7 @@ nb:
   speakers: { title: Tips til foredragsholdere, url: /foredragsholdere/ }
   start_chapter: { title: Starte ny avdeling, url: /ny-avdeling/ }
   switch_to: English
+  switch_flag: gb
   and: og
   upcoming_events: Se kommende møter på meetup.com
   join: Join
@@ -26,6 +27,7 @@ en:
   speakers: { title: Tips for speakers, url: /en/speakers/ }
   start_chapter: { title: Start a new chapter, url: /en/start-a-chapter/ }
   switch_to: Norsk
+  switch_flag: "no"
   and: and
   upcoming_events: See upcoming meetups on meetup.com
   join: Join
