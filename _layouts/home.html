@@ -8,8 +8,7 @@ layout: default
         <h1>{{ t.hero_title }}</h1>
         {{ content }}
         <div class="actions">
-            <a class="button button-primary" href="#chapters">{{ t.find_chapter }}</a>
-            <a class="button button-secondary" href="{{ t.start_chapter.url | relative_url }}">{{ t.start_chapter.title }}</a>
+            <a class="button button-primary" href="{{ t.start_chapter.url | relative_url }}">{{ t.start_chapter.title }}</a>
         </div>
     </div>
     <figure>

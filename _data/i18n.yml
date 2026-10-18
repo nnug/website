@@ -18,7 +18,6 @@ nb:
   meetup_group_for: Meetup-gruppe for
   menu: Meny
   hero_title: Norges brukergruppe for .NET-utviklere
-  find_chapter: Finn din avdeling
   chapters_heading: Avdelinger
   chapters_intro: Møtene arrangeres av lokale avdelinger. Bli med på Meetup for å få beskjed om nye møter.
   join_meetup: Bli med på Meetup
@@ -42,7 +41,6 @@ en:
   meetup_group_for: Meetup group for
   menu: Menu
   hero_title: Norway's user group for .NET developers
-  find_chapter: Find your chapter
   chapters_heading: Chapters
   chapters_intro: Meetups are run by local chapters. Join on Meetup to hear about new events.
   join_meetup: Join on Meetup
