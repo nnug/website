@@ -1,5 +1,5 @@
 {%- assign t = site.data.i18n[page.lang] -%}
-{%- assign nav_keys = "about,faq,speakers,start_chapter" | split: "," -%}
+{%- assign nav_keys = "about,speakers,start_chapter,faq" | split: "," -%}
 <nav class="site-nav" aria-label="{{ t.menu }}">
     <ul>
         {%- for key in nav_keys %}
