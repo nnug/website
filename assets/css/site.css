@@ -397,7 +397,6 @@ main {
 }
 
 .chapter-body {
-  flex: 1;
   padding: 14px 18px;
   border-top: 1px solid var(--border);
 }
@@ -408,9 +407,13 @@ main {
   margin-top: 4px;
 }
 
+/* Takes the card's spare height and keeps buttons at its top, so the Join
+   buttons line up even when a card has no X button. */
 .chapter-footer {
+  flex: 1;
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
   gap: 8px;
   padding: 14px 18px 18px;
 }
