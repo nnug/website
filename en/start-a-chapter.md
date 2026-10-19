@@ -25,7 +25,7 @@ We have several examples of companies that actively invest in being visible in c
 
 - We expect you to do a good job of finding the best possible board for NNUG in your region.
 - That you and the rest of the board try to organise at least 4 user group meetings a year.
-- Up-to-date and informative pages for your area here on nnug.no.
+- An up-to-date Meetup group for the chapter, where meetups are announced.
 - That you are able to travel within Norway at least once a year (preferably twice) to attend a central NNUG meeting for all leaders and board members. At these meetings we want every chapter to be represented by at least one person (preferably the leader). The leader can have travel expenses covered (but not lost working time). These meetings are usually held in Oslo.
 - You must actively contribute, together with the other leaders and board members, to take NNUG to new heights, with ideas for activities, information on our website, and so on.
 

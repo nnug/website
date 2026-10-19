@@ -26,7 +26,7 @@ Vi har flere eksempler på at bedrifter som aktivt satser på å være synlige i
 
 - Vi forventer at du gjør en god jobb for å finne et optimalt styre for NNUG i din region.
 - At du og resten av styret forsøker å arrangere minst 4 brukergruppemøter i året.
-- Oppdaterte og innholdsrike sider for ditt område her på nnug.no.
+- En oppdatert Meetup-gruppe for avdelingen, der møtene blir annonsert.
 - At du har mulighet til å reise i Norge minimum en gang pr. år (helst 2 ganger) for å delta på et sentralt NNUG møte for alle ledere og styremedlemmer. På disse møtene er det ønskelig at alle avdelinger er representert med minst en representant (helst lederen.) Lederen vil kunne få dekket reiseutgifter (ikke tapt arbeidsinnsats). Disse møtene avholdes som regel i Oslo.
 - Du må aktivt bidra sammen med de andre lederne og styremedlemmene for å ta NNUG videre til nye høyder, med innspill til aktiviteter, informasjon på nettstedet vårt osv.
 
