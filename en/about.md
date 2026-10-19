@@ -20,4 +20,4 @@ The first meeting was held on 30 October 2001 in Oslo. Invitations went out to e
 
 Everyone interested in helping to run NNUG going forward was invited to sign up. Four people did, and a board for NNUG was formed.
 
-Since then many user group meetings have been held, and many people have registered as members.
+Since then many user group meetings have been held, and many people have registered as members. Today NNUG has chapters in {% for chapter in site.data.chapters %}{% if forloop.last and forloop.first == false %} and {% elsif forloop.first == false %}, {% endif %}{{ chapter.name | remove: 'NNUG ' }}{% endfor %}.
