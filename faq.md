@@ -36,7 +36,7 @@ Absolutt! Vi oppfordrer alle våre medlemmer til å stille med innlegg. Du treng
 
 ## Hvordan kan dere stille med internasjonale forelesere når NNUG ikke har økonomi?
 
-NNUG er en del av [.NET Foundation](https://dotnetfoundation.org/), og dermed av et internasjonalt nettverk av .NET-brukergrupper. Noen internasjonale foredragsholdere kommer også til Norge i forbindelse med jobb eller ferie, og ønsker i den forbindenlse å holde foredrag på et av møtene våre. I tillegg gjør støtte fra sponsorer at vi av og til har mulighet til å få besøk. Det er også mange foredragsholdere som ønsker å besøke brukergrupper nettopp fordi de vet hvilket arbeid og engasjement vi legger ned i vårt lokale miljø, uten å ta betalt for arbeidet vårt. Mange er eller har vært engasjert i sin lokale brukergruppe og startet ofte sin karriere som foreleser nettopp der.
+NNUG er en del av [.NET Foundation](https://dotnetfoundation.org/), og dermed av et internasjonalt nettverk av .NET-brukergrupper. Noen internasjonale foredragsholdere kommer også til Norge i forbindelse med konferanser, jobb eller ferie, og ønsker i den forbindelse å holde foredrag på et av møtene våre. I tillegg gjør støtte fra sponsorer at vi av og til har mulighet til å få besøk. Det er også mange foredragsholdere som ønsker å besøke brukergrupper nettopp fordi de vet hvilket arbeid og engasjement vi legger ned i vårt lokale miljø, uten å ta betalt for arbeidet vårt. Mange er eller har vært engasjert i sin lokale brukergruppe og startet ofte sin karriere som foreleser nettopp der.
 
 ## Kan jeg presentere produktet vårt på NNUG?
 
